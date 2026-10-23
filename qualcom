@@ -3553,7 +3553,7 @@ end)
 WorkerScheduler:Start()
 
 -- ==============================================================================
--- [ GUI BUILDER & CONTROLS SETUP - iOS LIQUID GLASS SYSTEM ]
+-- [ GUI BUILDER & CONTROLS SETUP - AUTHENTIC APPLE iOS LIQUID GLASS SYSTEM ]
 -- ==============================================================================
 local safeContainer = nil
 if gethui then pcall(function() safeContainer = gethui() end) end
@@ -3573,82 +3573,132 @@ mainUI.ZIndexBehavior = Enum.ZIndexBehavior.Global
 mainUI.Parent = safeContainer
 
 -- ==============================================================================
--- [ LIQUID GLASS THEME ENGINE (APPLE SPECULAR PALETTES) ]
+-- [ APPLE SYSTEM COLOR PALETTES & LIQUID GLASS MATERIALS ]
 -- ==============================================================================
 local allThemes = {
     Sapphire = { 
-        Name = "Liquid Sapphire",
-        Main = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(16, 26, 48)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(12, 20, 38)), ColorSequenceKeypoint.new(1, Color3.fromRGB(8, 14, 28))}, 
-        Topbar = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(24, 38, 68)), ColorSequenceKeypoint.new(1, Color3.fromRGB(15, 24, 44))}, 
-        Button = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(28, 44, 76)), ColorSequenceKeypoint.new(1, Color3.fromRGB(18, 30, 56))}, 
-        ButtonHover = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 66, 110)), ColorSequenceKeypoint.new(1, Color3.fromRGB(26, 44, 78))}, 
-        CardBg = Color3.fromRGB(20, 32, 56), 
-        RowBg = Color3.fromRGB(14, 22, 40),
+        Name = "iOS System Blue",
+        Main = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(18, 22, 34)), 
+            ColorSequenceKeypoint.new(0.6, Color3.fromRGB(12, 16, 26)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(8, 10, 18))
+        }, 
+        Topbar = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(24, 30, 48)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(16, 20, 32))
+        },
+        TabBar = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(16, 20, 32)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(10, 13, 22))
+        },
+        CardBg = Color3.fromRGB(26, 32, 48), 
+        RowBg = Color3.fromRGB(20, 25, 38),
+        Separator = Color3.fromRGB(255, 255, 255),
         Accent = Color3.fromRGB(10, 132, 255),    -- Apple System Blue (#0A84FF)
         Accent2 = Color3.fromRGB(100, 210, 255),  -- Apple Frost Cyan (#64D2FF)
-        Text = Color3.fromRGB(245, 248, 255), 
-        SubText = Color3.fromRGB(165, 185, 215), 
-        Stroke = Color3.fromRGB(80, 130, 205),
-        GlassRim = Color3.fromRGB(190, 225, 255)
-    },
-    Ruby = { 
-        Name = "Liquid Ruby",
-        Main = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(48, 16, 24)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(36, 12, 18)), ColorSequenceKeypoint.new(1, Color3.fromRGB(24, 8, 12))}, 
-        Topbar = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(66, 22, 34)), ColorSequenceKeypoint.new(1, Color3.fromRGB(44, 14, 22))}, 
-        Button = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(76, 26, 38)), ColorSequenceKeypoint.new(1, Color3.fromRGB(52, 18, 28))}, 
-        ButtonHover = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(102, 36, 54)), ColorSequenceKeypoint.new(1, Color3.fromRGB(70, 24, 38))}, 
-        CardBg = Color3.fromRGB(52, 18, 26), 
-        RowBg = Color3.fromRGB(38, 14, 20),
-        Accent = Color3.fromRGB(255, 55, 95),     -- Apple System Pink (#FF375F)
-        Accent2 = Color3.fromRGB(255, 130, 160), 
-        Text = Color3.fromRGB(255, 245, 248), 
-        SubText = Color3.fromRGB(225, 175, 190), 
-        Stroke = Color3.fromRGB(205, 85, 115),
-        GlassRim = Color3.fromRGB(255, 185, 205)
+        Text = Color3.fromRGB(245, 245, 247), 
+        SubText = Color3.fromRGB(150, 155, 175), 
+        Stroke = Color3.fromRGB(255, 255, 255),
+        GlassRim = Color3.fromRGB(255, 255, 255)
     },
     Emerald = { 
-        Name = "Liquid Emerald",
-        Main = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(12, 38, 24)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(10, 28, 18)), ColorSequenceKeypoint.new(1, Color3.fromRGB(6, 18, 12))}, 
-        Topbar = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(18, 54, 34)), ColorSequenceKeypoint.new(1, Color3.fromRGB(12, 36, 24))}, 
-        Button = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(24, 66, 42)), ColorSequenceKeypoint.new(1, Color3.fromRGB(16, 44, 28))}, 
-        ButtonHover = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(36, 92, 60)), ColorSequenceKeypoint.new(1, Color3.fromRGB(22, 62, 40))}, 
-        CardBg = Color3.fromRGB(16, 46, 28), 
-        RowBg = Color3.fromRGB(12, 36, 22),
-        Accent = Color3.fromRGB(48, 209, 88),     -- Apple System Green (#30D158)
+        Name = "iOS System Green",
+        Main = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(14, 28, 20)), 
+            ColorSequenceKeypoint.new(0.6, Color3.fromRGB(10, 20, 14)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(6, 14, 10))
+        }, 
+        Topbar = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(20, 40, 28)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(12, 26, 18))
+        },
+        TabBar = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(12, 26, 18)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(8, 16, 12))
+        },
+        CardBg = Color3.fromRGB(22, 42, 30), 
+        RowBg = Color3.fromRGB(16, 32, 24),
+        Separator = Color3.fromRGB(255, 255, 255),
+        Accent = Color3.fromRGB(52, 199, 89),     -- Apple System Green (#34C759)
         Accent2 = Color3.fromRGB(99, 230, 226),   -- Apple System Mint (#63E6E2)
         Text = Color3.fromRGB(245, 255, 248), 
-        SubText = Color3.fromRGB(175, 225, 195), 
-        Stroke = Color3.fromRGB(85, 195, 125),
-        GlassRim = Color3.fromRGB(180, 255, 215)
+        SubText = Color3.fromRGB(155, 185, 165), 
+        Stroke = Color3.fromRGB(255, 255, 255),
+        GlassRim = Color3.fromRGB(255, 255, 255)
+    },
+    Ruby = { 
+        Name = "iOS System Pink",
+        Main = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 14, 20)), 
+            ColorSequenceKeypoint.new(0.6, Color3.fromRGB(24, 10, 14)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(16, 6, 10))
+        }, 
+        Topbar = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(48, 18, 26)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(30, 12, 18))
+        },
+        TabBar = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(30, 12, 18)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(18, 8, 12))
+        },
+        CardBg = Color3.fromRGB(46, 18, 26), 
+        RowBg = Color3.fromRGB(34, 14, 20),
+        Separator = Color3.fromRGB(255, 255, 255),
+        Accent = Color3.fromRGB(255, 55, 95),     -- Apple System Pink (#FF375F)
+        Accent2 = Color3.fromRGB(255, 125, 155), 
+        Text = Color3.fromRGB(255, 245, 248), 
+        SubText = Color3.fromRGB(195, 160, 170), 
+        Stroke = Color3.fromRGB(255, 255, 255),
+        GlassRim = Color3.fromRGB(255, 255, 255)
     },
     Amethyst = { 
-        Name = "Liquid Amethyst",
-        Main = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 16, 52)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(24, 12, 38)), ColorSequenceKeypoint.new(1, Color3.fromRGB(16, 8, 26))}, 
-        Topbar = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(50, 22, 76)), ColorSequenceKeypoint.new(1, Color3.fromRGB(34, 14, 52))}, 
-        Button = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(62, 28, 90)), ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 18, 60))}, 
-        ButtonHover = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(86, 42, 124)), ColorSequenceKeypoint.new(1, Color3.fromRGB(56, 26, 82))}, 
-        CardBg = Color3.fromRGB(42, 20, 64), 
-        RowBg = Color3.fromRGB(30, 14, 46),
-        Accent = Color3.fromRGB(191, 90, 242),    -- Apple System Purple (#BF5AF2)
-        Accent2 = Color3.fromRGB(220, 145, 255), 
+        Name = "iOS System Purple",
+        Main = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(26, 14, 38)), 
+            ColorSequenceKeypoint.new(0.6, Color3.fromRGB(18, 10, 26)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(12, 6, 18))
+        }, 
+        Topbar = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(38, 18, 54)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(24, 12, 34))
+        },
+        TabBar = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(24, 12, 34)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(14, 8, 20))
+        },
+        CardBg = Color3.fromRGB(38, 18, 52), 
+        RowBg = Color3.fromRGB(28, 14, 38),
+        Separator = Color3.fromRGB(255, 255, 255),
+        Accent = Color3.fromRGB(175, 82, 222),    -- Apple System Purple (#AF52DE)
+        Accent2 = Color3.fromRGB(218, 143, 255), 
         Text = Color3.fromRGB(250, 245, 255), 
-        SubText = Color3.fromRGB(210, 185, 235), 
-        Stroke = Color3.fromRGB(165, 105, 215),
-        GlassRim = Color3.fromRGB(230, 190, 255)
+        SubText = Color3.fromRGB(180, 160, 205), 
+        Stroke = Color3.fromRGB(255, 255, 255),
+        GlassRim = Color3.fromRGB(255, 255, 255)
     },
     Midnight = { 
-        Name = "Liquid Space Black",
-        Main = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(18, 19, 24)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(13, 14, 18)), ColorSequenceKeypoint.new(1, Color3.fromRGB(8, 9, 12))}, 
-        Topbar = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(28, 29, 36)), ColorSequenceKeypoint.new(1, Color3.fromRGB(18, 19, 24))}, 
-        Button = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(36, 38, 48)), ColorSequenceKeypoint.new(1, Color3.fromRGB(24, 25, 32))}, 
-        ButtonHover = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(50, 52, 66)), ColorSequenceKeypoint.new(1, Color3.fromRGB(34, 36, 46))}, 
-        CardBg = Color3.fromRGB(24, 25, 34), 
-        RowBg = Color3.fromRGB(18, 19, 26),
-        Accent = Color3.fromRGB(242, 242, 247),    -- Apple Space Gray / Silver
-        Accent2 = Color3.fromRGB(165, 170, 185), 
+        Name = "iOS Space Black",
+        Main = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(18, 18, 22)), 
+            ColorSequenceKeypoint.new(0.6, Color3.fromRGB(12, 12, 15)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(8, 8, 10))
+        }, 
+        Topbar = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(26, 26, 32)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(16, 16, 20))
+        },
+        TabBar = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(16, 16, 20)), 
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(10, 10, 12))
+        },
+        CardBg = Color3.fromRGB(28, 28, 36), 
+        RowBg = Color3.fromRGB(20, 20, 26),
+        Separator = Color3.fromRGB(255, 255, 255),
+        Accent = Color3.fromRGB(242, 242, 247),    -- Apple Space Gray / White (#F2F2F7)
+        Accent2 = Color3.fromRGB(142, 142, 147),   -- Apple System Gray (#8E8E93)
         Text = Color3.fromRGB(245, 245, 247), 
-        SubText = Color3.fromRGB(155, 160, 175), 
-        Stroke = Color3.fromRGB(90, 95, 110),
+        SubText = Color3.fromRGB(150, 150, 158), 
+        Stroke = Color3.fromRGB(255, 255, 255),
         GlassRim = Color3.fromRGB(255, 255, 255)
     }
 }
@@ -3656,11 +3706,11 @@ local allThemes = {
 if not allThemes[State.themeName] then State.themeName = "Sapphire" end
 local activeTheme = allThemes[State.themeName]
 
--- [ SMOOTH TWEENS & APPLE SPRINGS ]
+-- [ APPLE CORE TWEEN DEFINITIONS (AUTHENTIC SPRING DYNAMICS) ]
 local fastTw = TweenInfo.new(0.12, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local springTw = TweenInfo.new(0.24, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
 local smoothTw = TweenInfo.new(0.28, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-local iosSpring = TweenInfo.new(0.32, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+local iosSpring = TweenInfo.new(0.35, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
 
 local function doTween(obj, info, props) 
     local tw = Services.TweenService:Create(obj, info, props)
@@ -3686,91 +3736,97 @@ local function attachTactileAnimation(btn)
     local origSize = btn.Size
     btn.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
-            doTween(btn, fastTw, {Size = UDim2.new(origSize.X.Scale * 0.94, origSize.X.Offset * 0.94, origSize.Y.Scale * 0.94, origSize.Y.Offset * 0.94)})
+            doTween(btn, fastTw, {Size = UDim2.new(origSize.X.Scale, origSize.X.Offset * 0.96, origSize.Y.Scale, origSize.Y.Offset * 0.96)})
         end
     end)
     btn.InputEnded:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
-            doTween(btn, springTw, {Size = origSize})
+        if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.MouseButton1 then
+            doTween(btn, iosSpring, {Size = origSize})
         end
     end)
 end
 
 -- ==============================================================================
--- [ iOS SYSTEM ALERT MODALS (FROSTED GLASS WITH SPECULAR RIM) ]
+-- [ AUTHENTIC iOS MODAL ALERT DIALOGS (UIAlertController) ]
 -- ==============================================================================
 local function showWarningModal(title, text)
     local existing = mainUI:FindFirstChild("WarningModalCard")
     if existing then existing:Destroy() end
 
-    local card = Instance.new("Frame", mainUI)
-    card.Name = "WarningModalCard"
+    local scrim = Instance.new("TextButton", mainUI)
+    scrim.Name = "WarningModalCard"
+    scrim.Size = UDim2.new(1, 0, 1, 0)
+    scrim.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    scrim.BackgroundTransparency = 1
+    scrim.Text = ""
+    scrim.AutoButtonColor = false
+    scrim.ZIndex = 500
+
+    doTween(scrim, smoothTw, {BackgroundTransparency = 0.45})
+
+    local card = Instance.new("Frame", scrim)
     card.AnchorPoint = Vector2.new(0.5, 0.5)
     card.Position = UDim2.fromScale(0.5, 0.5)
     card.Size = UDim2.fromOffset(0, 0)
-    card.BackgroundColor3 = Color3.fromRGB(18, 22, 34)
-    card.BackgroundTransparency = 0.15
+    card.BackgroundColor3 = Color3.fromRGB(24, 26, 36)
+    card.BackgroundTransparency = 0.12
     card.BorderSizePixel = 0
-    card.ZIndex = 500
+    card.ZIndex = 501
     card.ClipsDescendants = true
-    rndCorner(card, 20)
-
-    -- Specular top gloss
-    local gloss = Instance.new("Frame", card)
-    gloss.Size = UDim2.new(1, 0, 0.45, 0)
-    gloss.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    gloss.BorderSizePixel = 0
-    gloss.ZIndex = 501
-    rndCorner(gloss, 20)
-    local glossGrad = makeGrad(gloss, 90)
-    glossGrad.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 0.85), NumberSequenceKeypoint.new(0.4, 0.96), NumberSequenceKeypoint.new(1, 1)}
+    rndCorner(card, 18)
 
     local cardStr = Instance.new("UIStroke", card)
-    cardStr.Thickness = 1.3
-    cardStr.Color = Color3.fromRGB(255, 180, 60)
-    cardStr.Transparency = 0.25
+    cardStr.Thickness = 1
+    cardStr.Color = Color3.fromRGB(255, 255, 255)
+    cardStr.Transparency = 0.82
 
     local tit = Instance.new("TextLabel", card)
-    tit.Size = UDim2.new(1, -24, 0, 26)
-    tit.Position = UDim2.new(0, 12, 0, 16)
+    tit.Size = UDim2.new(1, -32, 0, 22)
+    tit.Position = UDim2.new(0, 16, 0, 18)
     tit.BackgroundTransparency = 1
     tit.Font = Enum.Font.GothamBold
-    tit.TextSize = 15
-    tit.TextColor3 = Color3.fromRGB(255, 195, 65)
+    tit.TextSize = 15.5
+    tit.TextColor3 = Color3.fromRGB(255, 255, 255)
     tit.TextXAlignment = Enum.TextXAlignment.Center
     tit.ZIndex = 502
     tit.Text = title
 
     local desc = Instance.new("TextLabel", card)
-    desc.Size = UDim2.new(1, -32, 0, 48)
-    desc.Position = UDim2.new(0, 16, 0, 46)
+    desc.Size = UDim2.new(1, -36, 0, 48)
+    desc.Position = UDim2.new(0, 18, 0, 44)
     desc.BackgroundTransparency = 1
-    desc.Font = Enum.Font.GothamMedium
+    desc.Font = Enum.Font.Gotham
     desc.TextSize = 12
-    desc.TextColor3 = Color3.fromRGB(225, 230, 245)
+    desc.TextColor3 = Color3.fromRGB(180, 185, 205)
     desc.TextWrapped = true
     desc.ZIndex = 502
     desc.Text = text
 
+    -- iOS Alert Action Button
     local okBtn = Instance.new("TextButton", card)
-    okBtn.Size = UDim2.new(0, 110, 0, 34)
-    okBtn.Position = UDim2.new(0.5, -55, 1, -48)
-    okBtn.BackgroundColor3 = activeTheme.Accent
+    okBtn.Size = UDim2.new(1, 0, 0, 44)
+    okBtn.Position = UDim2.new(0, 0, 1, -44)
+    okBtn.BackgroundTransparency = 1
     okBtn.Font = Enum.Font.GothamBold
-    okBtn.TextSize = 13
-    okBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    okBtn.TextSize = 14
+    okBtn.TextColor3 = activeTheme.Accent
     okBtn.ZIndex = 502
-    okBtn.Text = "Dismiss"
-    rndCorner(okBtn, 17)
-    attachTactileAnimation(okBtn)
+    okBtn.Text = "OK"
 
-    doTween(card, iosSpring, {Size = UDim2.fromOffset(360, 165)})
+    local divLine = Instance.new("Frame", card)
+    divLine.Size = UDim2.new(1, 0, 0, 1)
+    divLine.Position = UDim2.new(0, 0, 1, -44)
+    divLine.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    divLine.BackgroundTransparency = 0.88
+    divLine.BorderSizePixel = 0
+    divLine.ZIndex = 502
+
+    doTween(card, iosSpring, {Size = UDim2.fromOffset(280, 150)})
 
     okBtn.MouseButton1Click:Connect(function()
         local tw = doTween(card, fastTw, {Size = UDim2.fromOffset(0, 0)})
-        tw.Completed:Connect(function()
-            card:Destroy()
-        end)
+        doTween(scrim, fastTw, {BackgroundTransparency = 1})
+        tw.Completed:Connect(function() scrim:Destroy() end)
     end)
 end
 
@@ -3778,226 +3834,255 @@ local function showDiscordModal()
     local existing = mainUI:FindFirstChild("DiscordModalCard")
     if existing then existing:Destroy() end
 
-    local card = Instance.new("Frame", mainUI)
-    card.Name = "DiscordModalCard"
+    local scrim = Instance.new("TextButton", mainUI)
+    scrim.Name = "DiscordModalCard"
+    scrim.Size = UDim2.new(1, 0, 1, 0)
+    scrim.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    scrim.BackgroundTransparency = 1
+    scrim.Text = ""
+    scrim.AutoButtonColor = false
+    scrim.ZIndex = 500
+
+    doTween(scrim, smoothTw, {BackgroundTransparency = 0.45})
+
+    local card = Instance.new("Frame", scrim)
     card.AnchorPoint = Vector2.new(0.5, 0.5)
     card.Position = UDim2.fromScale(0.5, 0.5)
     card.Size = UDim2.fromOffset(0, 0)
-    card.BackgroundColor3 = Color3.fromRGB(16, 20, 32)
-    card.BackgroundTransparency = 0.15
+    card.BackgroundColor3 = Color3.fromRGB(22, 25, 36)
+    card.BackgroundTransparency = 0.12
     card.BorderSizePixel = 0
-    card.ZIndex = 500
+    card.ZIndex = 501
     card.ClipsDescendants = true
-    rndCorner(card, 22)
-
-    local gloss = Instance.new("Frame", card)
-    gloss.Size = UDim2.new(1, 0, 0.45, 0)
-    gloss.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    gloss.BorderSizePixel = 0
-    gloss.ZIndex = 501
-    rndCorner(gloss, 22)
-    local glossGrad = makeGrad(gloss, 90)
-    glossGrad.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 0.84), NumberSequenceKeypoint.new(0.4, 0.96), NumberSequenceKeypoint.new(1, 1)}
+    rndCorner(card, 18)
 
     local cardStr = Instance.new("UIStroke", card)
-    cardStr.Thickness = 1.4
-    cardStr.Color = Color3.fromRGB(88, 101, 242)
-    cardStr.Transparency = 0.3
+    cardStr.Thickness = 1
+    cardStr.Color = Color3.fromRGB(255, 255, 255)
+    cardStr.Transparency = 0.82
 
     local tit = Instance.new("TextLabel", card)
-    tit.Size = UDim2.new(1, -24, 0, 26)
-    tit.Position = UDim2.new(0, 12, 0, 18)
+    tit.Size = UDim2.new(1, -32, 0, 22)
+    tit.Position = UDim2.new(0, 16, 0, 18)
     tit.BackgroundTransparency = 1
     tit.Font = Enum.Font.GothamBold
     tit.TextSize = 16
     tit.TextColor3 = Color3.fromRGB(255, 255, 255)
+    tit.TextXAlignment = Enum.TextXAlignment.Center
     tit.ZIndex = 502
-    tit.Text = "Community Discord"
+    tit.Text = "Syntax Hub Community"
 
     local desc = Instance.new("TextLabel", card)
-    desc.Size = UDim2.new(1, -32, 0, 44)
-    desc.Position = UDim2.new(0, 16, 0, 48)
+    desc.Size = UDim2.new(1, -36, 0, 48)
+    desc.Position = UDim2.new(0, 18, 0, 44)
     desc.BackgroundTransparency = 1
     desc.Font = Enum.Font.Gotham
     desc.TextSize = 12
-    desc.TextColor3 = Color3.fromRGB(185, 195, 225)
+    desc.TextColor3 = Color3.fromRGB(180, 185, 205)
     desc.TextWrapped = true
     desc.ZIndex = 502
-    desc.Text = "Get the latest script updates, configuration tips, and support by joining our Discord server."
+    desc.Text = "Join our community Discord server for live updates, support, and discussions."
 
-    local joinBtn = Instance.new("TextButton", card)
-    joinBtn.Size = UDim2.new(0, 125, 0, 36)
-    joinBtn.Position = UDim2.new(0.5, -135, 1, -52)
-    joinBtn.BackgroundColor3 = Color3.fromRGB(88, 101, 242)
-    joinBtn.Font = Enum.Font.GothamBold
-    joinBtn.TextSize = 13
-    joinBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-    joinBtn.ZIndex = 502
-    joinBtn.Text = "Copy Invite"
-    rndCorner(joinBtn, 18)
-    attachTactileAnimation(joinBtn)
+    local hDiv = Instance.new("Frame", card)
+    hDiv.Size = UDim2.new(1, 0, 0, 1)
+    hDiv.Position = UDim2.new(0, 0, 1, -44)
+    hDiv.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    hDiv.BackgroundTransparency = 0.88
+    hDiv.BorderSizePixel = 0
+    hDiv.ZIndex = 502
+
+    local vDiv = Instance.new("Frame", card)
+    vDiv.Size = UDim2.new(0, 1, 0, 44)
+    vDiv.Position = UDim2.new(0.5, 0, 1, -44)
+    vDiv.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    vDiv.BackgroundTransparency = 0.88
+    vDiv.BorderSizePixel = 0
+    vDiv.ZIndex = 502
 
     local noBtn = Instance.new("TextButton", card)
-    noBtn.Size = UDim2.new(0, 125, 0, 36)
-    noBtn.Position = UDim2.new(0.5, 10, 1, -52)
-    noBtn.BackgroundColor3 = Color3.fromRGB(36, 40, 56)
-    noBtn.Font = Enum.Font.GothamMedium
-    noBtn.TextSize = 13
-    noBtn.TextColor3 = Color3.fromRGB(210, 215, 235)
+    noBtn.Size = UDim2.new(0.5, 0, 0, 44)
+    noBtn.Position = UDim2.new(0, 0, 1, -44)
+    noBtn.BackgroundTransparency = 1
+    noBtn.Font = Enum.Font.Gotham
+    noBtn.TextSize = 14
+    noBtn.TextColor3 = Color3.fromRGB(150, 155, 175)
     noBtn.ZIndex = 502
     noBtn.Text = "Not Now"
-    rndCorner(noBtn, 18)
-    attachTactileAnimation(noBtn)
 
-    doTween(card, iosSpring, {Size = UDim2.fromOffset(380, 175)})
+    local joinBtn = Instance.new("TextButton", card)
+    joinBtn.Size = UDim2.new(0.5, 0, 0, 44)
+    joinBtn.Position = UDim2.new(0.5, 0, 1, -44)
+    joinBtn.BackgroundTransparency = 1
+    joinBtn.Font = Enum.Font.GothamBold
+    joinBtn.TextSize = 14
+    joinBtn.TextColor3 = activeTheme.Accent
+    joinBtn.ZIndex = 502
+    joinBtn.Text = "Join Server"
+
+    doTween(card, iosSpring, {Size = UDim2.fromOffset(290, 160)})
 
     joinBtn.MouseButton1Click:Connect(function()
         local copy = setclipboard or toclipboard or (Clipboard and Clipboard.set)
-        if copy then
-            pcall(copy, "https://discord.gg/DHVH8qbkkE")
-        end
+        if copy then pcall(copy, "https://discord.gg/DHVH8qbkkE") end
         joinBtn.Text = "Copied!"
         task.delay(0.5, function()
             local tw = doTween(card, fastTw, {Size = UDim2.fromOffset(0, 0)})
-            tw.Completed:Connect(function() card:Destroy() end)
+            doTween(scrim, fastTw, {BackgroundTransparency = 1})
+            tw.Completed:Connect(function() scrim:Destroy() end)
         end)
     end)
 
     noBtn.MouseButton1Click:Connect(function()
         local tw = doTween(card, fastTw, {Size = UDim2.fromOffset(0, 0)})
-        tw.Completed:Connect(function() card:Destroy() end)
+        doTween(scrim, fastTw, {BackgroundTransparency = 1})
+        tw.Completed:Connect(function() scrim:Destroy() end)
     end)
 end
 
 -- ==============================================================================
--- [ MAIN UI LAYOUT - iOS LIQUID GLASS WINDOW ]
+-- [ MAIN WINDOW: AUTHENTIC APPLE iOS SHEET FORM FACTOR ]
 -- ==============================================================================
 local frm = Instance.new("Frame", mainUI)
 frm.Name = "MainFrame"
 frm.AnchorPoint = Vector2.new(0.5, 0.5)
 frm.Position = UDim2.new(0.5, 0, 0.5, 0)
-frm.Size = UDim2.new(0, 500, 0, 335)
+frm.Size = UDim2.new(0, 465, 0, 490) -- Authentic iOS sheet ratio
 frm.ClipsDescendants = true
 frm.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-frm.BackgroundTransparency = 0.18
+frm.BackgroundTransparency = 0.16 -- Real Apple translucent material
 frm.BorderSizePixel = 0
-rndCorner(frm, 22) -- Apple squircle radius
+rndCorner(frm, 26) -- Apple Squircle radius
 
 local frmGrad = makeGrad(frm, 135)
-local frmStr = Instance.new("UIStroke", frm)
-frmStr.Thickness = 1.3
-frmStr.Transparency = 0.45
 
--- Optical Specular Top Gloss (Liquid Glass Light Refraction)
+-- Refractive Glass Specular Edge Stroke
+local frmStr = Instance.new("UIStroke", frm)
+frmStr.Thickness = 1.2
+frmStr.Color = Color3.fromRGB(255, 255, 255)
+frmStr.Transparency = 0.78
+
+-- Optical Top Specular Sheen (Liquid Glass Refraction)
 local topGloss = Instance.new("Frame", frm)
-topGloss.Name = "LiquidGlassSheen"
-topGloss.Size = UDim2.new(1, 0, 0.42, 0)
+topGloss.Name = "LiquidGlassSpecularSheen"
+topGloss.Size = UDim2.new(1, 0, 0.35, 0)
 topGloss.Position = UDim2.new(0, 0, 0, 0)
 topGloss.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 topGloss.BorderSizePixel = 0
 topGloss.ZIndex = 2
-rndCorner(topGloss, 22)
+rndCorner(topGloss, 26)
 
 local glossGrad = makeGrad(topGloss, 90)
 glossGrad.Transparency = NumberSequence.new{
     NumberSequenceKeypoint.new(0, 0.82), 
-    NumberSequenceKeypoint.new(0.35, 0.94), 
+    NumberSequenceKeypoint.new(0.35, 0.95), 
     NumberSequenceKeypoint.new(1, 1.0)
 }
 
--- Inner subtle bezel glow
-local innerBezel = Instance.new("Frame", frm)
-innerBezel.Name = "InnerBezel"
-innerBezel.BackgroundTransparency = 1
-innerBezel.Size = UDim2.new(1, -2, 1, -2)
-innerBezel.Position = UDim2.new(0, 1, 0, 1)
-innerBezel.BorderSizePixel = 0
-rndCorner(innerBezel, 21)
-
-local innerGrad = makeGrad(innerBezel, 90)
-innerGrad.Transparency = NumberSequence.new{
-    NumberSequenceKeypoint.new(0, 0.70), 
-    NumberSequenceKeypoint.new(0.40, 0.90), 
-    NumberSequenceKeypoint.new(1, 1.0)
-}
-
--- [ TOP BAR / iOS NAVIGATION BAR ]
+-- ==============================================================================
+-- [ TOP NAVIGATION BAR (UINavigationBar with Grabber & Large Title) ]
+-- ==============================================================================
 local topBar = Instance.new("Frame", frm)
-topBar.Name = "TitleBar"
+topBar.Name = "NavigationBar"
 topBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-topBar.BackgroundTransparency = 0.25
-topBar.Size = UDim2.new(1, 0, 0, 50)
+topBar.BackgroundTransparency = 0.22
+topBar.Size = UDim2.new(1, 0, 0, 52)
 topBar.BorderSizePixel = 0
-topBar.ZIndex = 3
-rndCorner(topBar, 22)
+topBar.ZIndex = 5
+rndCorner(topBar, 26)
 
 local topBarGrad = makeGrad(topBar, 0)
 
--- Bottom seam fix so topBar flows seamlessly into frame
+-- Bottom seam cover for topBar
 local fixBar = Instance.new("Frame", topBar)
 fixBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-fixBar.BackgroundTransparency = 0.25
+fixBar.BackgroundTransparency = 0.22
 fixBar.BorderSizePixel = 0
 fixBar.Size = UDim2.new(1, 0, 0, 16)
 fixBar.Position = UDim2.new(0, 0, 1, -16)
-fixBar.ZIndex = 3
+fixBar.ZIndex = 5
 local fixBarGrad = makeGrad(fixBar, 0)
 
--- iOS Home / Drag Grabber Pill
+-- Hair-thin bottom border of NavigationBar
+local navBorder = Instance.new("Frame", topBar)
+navBorder.Size = UDim2.new(1, 0, 0, 1)
+navBorder.Position = UDim2.new(0, 0, 1, -1)
+navBorder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+navBorder.BackgroundTransparency = 0.88
+navBorder.BorderSizePixel = 0
+navBorder.ZIndex = 6
+
+-- iOS Centered Sheet Grabber Pill
 local iosGrabber = Instance.new("Frame", topBar)
-iosGrabber.Name = "iOSGrabber"
+iosGrabber.Name = "SheetGrabber"
 iosGrabber.AnchorPoint = Vector2.new(0.5, 0)
-iosGrabber.Position = UDim2.new(0.5, 0, 0, 6)
-iosGrabber.Size = UDim2.new(0, 42, 0, 4)
+iosGrabber.Position = UDim2.new(0.5, 0, 0, 7)
+iosGrabber.Size = UDim2.new(0, 36, 0, 5)
 iosGrabber.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 iosGrabber.BackgroundTransparency = 0.65
 iosGrabber.BorderSizePixel = 0
-iosGrabber.ZIndex = 4
+iosGrabber.ZIndex = 6
 rndCorner(iosGrabber, 999)
 
--- Title Label (SF Pro typography)
+-- Navigation Title (San Francisco Typography)
 local topTxt = Instance.new("TextLabel", topBar)
 topTxt.BackgroundTransparency = 1
-topTxt.Position = UDim2.new(0, 18, 0, 15)
-topTxt.Size = UDim2.new(0, 120, 0, 24)
+topTxt.Position = UDim2.new(0, 18, 0, 18)
+topTxt.Size = UDim2.new(0, 140, 0, 24)
 topTxt.Font = Enum.Font.GothamBold
 topTxt.TextSize = 17
 topTxt.TextColor3 = Color3.fromRGB(255, 255, 255)
 topTxt.TextXAlignment = Enum.TextXAlignment.Left
-topTxt.ZIndex = 4
+topTxt.ZIndex = 6
 topTxt.Text = "Syntax Hub"
 
--- iOS Pill Badge next to title
+-- Apple Liquid Glass Tag
 local editionBadge = Instance.new("Frame", topBar)
-editionBadge.Position = UDim2.new(0, 125, 0, 18)
-editionBadge.Size = UDim2.new(0, 88, 0, 18)
+editionBadge.Position = UDim2.new(0, 126, 0, 21)
+editionBadge.Size = UDim2.new(0, 76, 0, 18)
 editionBadge.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-editionBadge.BackgroundTransparency = 0.88
+editionBadge.BackgroundTransparency = 0.90
 editionBadge.BorderSizePixel = 0
-editionBadge.ZIndex = 4
+editionBadge.ZIndex = 6
 rndCorner(editionBadge, 999)
 
 local badgeStroke = Instance.new("UIStroke", editionBadge)
 badgeStroke.Thickness = 1
 badgeStroke.Color = activeTheme.Accent
-badgeStroke.Transparency = 0.4
+badgeStroke.Transparency = 0.5
 
 local badgeTxt = Instance.new("TextLabel", editionBadge)
 badgeTxt.Size = UDim2.new(1, 0, 1, 0)
 badgeTxt.BackgroundTransparency = 1
 badgeTxt.Font = Enum.Font.GothamBold
-badgeTxt.TextSize = 9
+badgeTxt.TextSize = 8.5
 badgeTxt.TextColor3 = activeTheme.Accent2
-badgeTxt.Text = "LIQUID GLASS"
-badgeTxt.ZIndex = 4
+badgeTxt.Text = "iOS GLASS"
+badgeTxt.ZIndex = 6
 
--- [ iOS ASSISTIVETOUCH / DYNAMIC ISLAND FLOATING TOGGLE ]
+-- iOS Close / Minimize Circular Button
+local closeBtn = Instance.new("TextButton", topBar)
+closeBtn.Name = "CloseButton"
+closeBtn.Size = UDim2.new(0, 28, 0, 28)
+closeBtn.Position = UDim2.new(1, -40, 0, 16)
+closeBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+closeBtn.BackgroundTransparency = 0.85
+closeBtn.Text = "X"
+closeBtn.Font = Enum.Font.GothamBold
+closeBtn.TextSize = 11
+closeBtn.TextColor3 = Color3.fromRGB(220, 225, 240)
+closeBtn.ZIndex = 6
+rndCorner(closeBtn, 999)
+attachTactileAnimation(closeBtn)
+
+-- ==============================================================================
+-- [ FLOATING ASSISTIVETOUCH / DYNAMIC ISLAND TOGGLE ORB ]
+-- ==============================================================================
 local tglBtn = Instance.new("ImageButton", mainUI)
 tglBtn.Name = "Toggle"
 tglBtn.Size = UDim2.new(0, 52, 0, 52)
-tglBtn.Position = UDim2.new(0, 20, 0.5, -26)
-tglBtn.BackgroundColor3 = Color3.fromRGB(18, 22, 34)
-tglBtn.BackgroundTransparency = 0.22
+tglBtn.Position = UDim2.new(0, 18, 0.5, -26)
+tglBtn.BackgroundColor3 = Color3.fromRGB(16, 20, 30)
+tglBtn.BackgroundTransparency = 0.20
 tglBtn.BorderSizePixel = 0
 tglBtn.Image = "rbxthumb://type=Asset&id=73878877741609&w=150&h=150"
 tglBtn.AutoButtonColor = false
@@ -4005,80 +4090,79 @@ rndCorner(tglBtn, 999)
 attachTactileAnimation(tglBtn)
 
 local tglStr = Instance.new("UIStroke", tglBtn)
-tglStr.Thickness = 1.4
-tglStr.Transparency = 0.35
+tglStr.Thickness = 1.3
+tglStr.Transparency = 0.40
 tglStr.Color = activeTheme.Accent
 
--- Subtle specular sheen on floating toggle
 local tglGloss = Instance.new("Frame", tglBtn)
-tglGloss.Size = UDim2.new(1, 0, 0.48, 0)
+tglGloss.Size = UDim2.new(1, 0, 0.5, 0)
 tglGloss.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 tglGloss.BorderSizePixel = 0
 rndCorner(tglGloss, 999)
 local tglGlossGrad = makeGrad(tglGloss, 90)
 tglGlossGrad.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 0.78), NumberSequenceKeypoint.new(1, 1.0)}
 
--- [ SIDEBAR / iOS GROUPED INSET NAVIGATION ]
-local side = Instance.new("Frame", frm)
-side.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-side.BackgroundTransparency = 0.30
-side.BorderSizePixel = 0
-side.Position = UDim2.new(0, 10, 0, 58)
-side.Size = UDim2.new(0, 124, 1, -68)
-side.ZIndex = 3
-rndCorner(side, 16)
-
-local sideGrad = makeGrad(side, 135)
-local sideStr = Instance.new("UIStroke", side)
-sideStr.Thickness = 1
-sideStr.Transparency = 0.5
-
-local sidePad = Instance.new("UIPadding", side)
-sidePad.PaddingTop = UDim.new(0, 10)
-sidePad.PaddingBottom = UDim.new(0, 10)
-sidePad.PaddingLeft = UDim.new(0, 8)
-sidePad.PaddingRight = UDim.new(0, 8)
-
-local sideLay = Instance.new("UIListLayout", side)
-sideLay.Padding = UDim.new(0, 6)
-sideLay.SortOrder = Enum.SortOrder.LayoutOrder
-
--- [ CONTENT CONTAINER FRAME ]
-local cntFrame = Instance.new("Frame", frm)
-cntFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-cntFrame.BackgroundTransparency = 0.25
-cntFrame.BorderSizePixel = 0
-cntFrame.Position = UDim2.new(0, 142, 0, 58)
-cntFrame.Size = UDim2.new(1, -152, 1, -68)
-cntFrame.ZIndex = 3
-rndCorner(cntFrame, 16)
-
-local cntGrad = makeGrad(cntFrame, 135)
-local cntStr = Instance.new("UIStroke", cntFrame)
-cntStr.Thickness = 1
-cntStr.Transparency = 0.5
-
--- Active Page Title & Underline
-local pageLbl = Instance.new("TextLabel", cntFrame)
-pageLbl.BackgroundTransparency = 1
-pageLbl.Position = UDim2.new(0, 14, 0, 10)
-pageLbl.Size = UDim2.new(1, -28, 0, 22)
-pageLbl.Font = Enum.Font.GothamBold
-pageLbl.TextSize = 16
-pageLbl.TextColor3 = Color3.new(1, 1, 1)
-pageLbl.TextXAlignment = Enum.TextXAlignment.Left
-pageLbl.Text = "Farm"
-
-local pgLine = Instance.new("Frame", cntFrame)
-pgLine.Size = UDim2.new(0, 32, 0, 3)
-pgLine.Position = UDim2.new(0, 14, 0, 34)
-pgLine.BorderSizePixel = 0
-rndCorner(pgLine, 999)
-
-local pgsHold = Instance.new("Frame", cntFrame)
+-- ==============================================================================
+-- [ FULL-WIDTH CONTENT VIEW CONTAINER ]
+-- ==============================================================================
+local pgsHold = Instance.new("Frame", frm)
+pgsHold.Name = "ContentViewContainer"
 pgsHold.BackgroundTransparency = 1
-pgsHold.Position = UDim2.new(0, 8, 0, 44)
-pgsHold.Size = UDim2.new(1, -16, 1, -50)
+pgsHold.Position = UDim2.new(0, 0, 0, 52)
+pgsHold.Size = UDim2.new(1, 0, 1, -112) -- Leaves room for NavigationBar (52) & TabBar (60)
+pgsHold.ZIndex = 3
+pgsHold.ClipsDescendants = true
+
+-- ==============================================================================
+-- [ AUTHENTIC APPLE iOS FROSTED GLASS TAB BAR (UITabBar) ]
+-- ==============================================================================
+local tabBar = Instance.new("Frame", frm)
+tabBar.Name = "TabBar"
+tabBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+tabBar.BackgroundTransparency = 0.20
+tabBar.Position = UDim2.new(0, 0, 1, -60)
+tabBar.Size = UDim2.new(1, 0, 0, 60)
+tabBar.BorderSizePixel = 0
+tabBar.ZIndex = 5
+rndCorner(tabBar, 26)
+
+local tabBarGrad = makeGrad(tabBar, 0)
+
+-- Top seam cover for tabBar
+local fixTab = Instance.new("Frame", tabBar)
+fixTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+fixTab.BackgroundTransparency = 0.20
+fixTab.BorderSizePixel = 0
+fixTab.Size = UDim2.new(1, 0, 0, 16)
+fixTab.Position = UDim2.new(0, 0, 0, 0)
+fixTab.ZIndex = 5
+local fixTabGrad = makeGrad(fixTab, 0)
+
+-- Hair-thin top border of TabBar
+local tabBorder = Instance.new("Frame", tabBar)
+tabBorder.Size = UDim2.new(1, 0, 0, 1)
+tabBorder.Position = UDim2.new(0, 0, 0, 0)
+tabBorder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+tabBorder.BackgroundTransparency = 0.88
+tabBorder.BorderSizePixel = 0
+tabBorder.ZIndex = 6
+
+-- iOS Home Indicator Bar at very bottom of screen
+local homeIndicator = Instance.new("Frame", tabBar)
+homeIndicator.Name = "HomeIndicator"
+homeIndicator.AnchorPoint = Vector2.new(0.5, 1)
+homeIndicator.Position = UDim2.new(0.5, 0, 1, -6)
+homeIndicator.Size = UDim2.new(0, 110, 0, 4)
+homeIndicator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+homeIndicator.BackgroundTransparency = 0.65
+homeIndicator.BorderSizePixel = 0
+homeIndicator.ZIndex = 6
+rndCorner(homeIndicator, 999)
+
+-- Tab Items Layout
+local tabItemsLayout = Instance.new("UIListLayout", tabBar)
+tabItemsLayout.FillDirection = Enum.FillDirection.Horizontal
+tabItemsLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
 -- ==============================================================================
 -- [ PAGES: FARM, PRIORITY, STEAL PANEL, SETTINGS ]
@@ -4089,18 +4173,20 @@ farmPg.Size = UDim2.new(1, 0, 1, 0)
 farmPg.BackgroundTransparency = 1
 farmPg.BorderSizePixel = 0
 farmPg.ScrollBarThickness = 3
+farmPg.ScrollBarImageColor3 = Color3.fromRGB(255, 255, 255)
+farmPg.ScrollBarImageTransparency = 0.7
 farmPg.AutomaticCanvasSize = Enum.AutomaticSize.Y
 farmPg.CanvasSize = UDim2.new(0, 0, 0, 0)
 farmPg.Visible = true
 
 local farmPad = Instance.new("UIPadding", farmPg)
-farmPad.PaddingTop = UDim.new(0, 6)
-farmPad.PaddingBottom = UDim.new(0, 16)
-farmPad.PaddingLeft = UDim.new(0, 4)
-farmPad.PaddingRight = UDim.new(0, 6)
+farmPad.PaddingTop = UDim.new(0, 12)
+farmPad.PaddingBottom = UDim.new(0, 20)
+farmPad.PaddingLeft = UDim.new(0, 14)
+farmPad.PaddingRight = UDim.new(0, 14)
 
 local farmLay = Instance.new("UIListLayout", farmPg)
-farmLay.Padding = UDim.new(0, 8)
+farmLay.Padding = UDim.new(0, 16) -- Breathing room between Inset Groups
 farmLay.SortOrder = Enum.SortOrder.LayoutOrder
 
 -- Priority Page
@@ -4116,13 +4202,13 @@ priorityPg.CanvasSize = UDim2.new(0, 0, 0, 0)
 priorityPg.Visible = false
 
 local priorityPad = Instance.new("UIPadding", priorityPg)
-priorityPad.PaddingTop = UDim.new(0, 6)
-priorityPad.PaddingBottom = UDim.new(0, 16)
-priorityPad.PaddingLeft = UDim.new(0, 4)
-priorityPad.PaddingRight = UDim.new(0, 6)
+priorityPad.PaddingTop = UDim.new(0, 12)
+priorityPad.PaddingBottom = UDim.new(0, 20)
+priorityPad.PaddingLeft = UDim.new(0, 14)
+priorityPad.PaddingRight = UDim.new(0, 14)
 
 local priorityLayout = Instance.new("UIListLayout", priorityPg)
-priorityLayout.Padding = UDim.new(0, 6)
+priorityLayout.Padding = UDim.new(0, 8)
 priorityLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
 local function renderPriorityPanel()
@@ -4134,95 +4220,80 @@ local function renderPriorityPanel()
 
     for index, taskName in ipairs(PriorityManager.List) do
         local card = Instance.new("Frame", priorityPg)
-        card.Size = UDim2.new(1, -6, 0, 50)
-        card.BackgroundColor3 = activeTheme and activeTheme.CardBg or Color3.fromRGB(20, 32, 56)
-        card.BackgroundTransparency = 0.35
+        card.Size = UDim2.new(1, 0, 0, 52)
+        card.BackgroundColor3 = activeTheme and activeTheme.CardBg or Color3.fromRGB(24, 30, 46)
+        card.BackgroundTransparency = 0.28
         card.BorderSizePixel = 0
         card.LayoutOrder = index
-        rndCorner(card, 12)
+        rndCorner(card, 13)
 
         local cardStroke = Instance.new("UIStroke", card)
-        cardStroke.Color = (index == 1) and (activeTheme and activeTheme.Accent or Color3.fromRGB(10, 132, 255)) or (activeTheme and activeTheme.Stroke or Color3.fromRGB(60, 80, 110))
-        cardStroke.Thickness = (index == 1) and 1.5 or 1
-        cardStroke.Transparency = (index == 1) and 0 or 0.4
+        cardStroke.Color = (index == 1) and (activeTheme and activeTheme.Accent or Color3.fromRGB(10, 132, 255)) or Color3.fromRGB(255, 255, 255)
+        cardStroke.Thickness = (index == 1) and 1.3 or 1
+        cardStroke.Transparency = (index == 1) and 0.25 or 0.85
 
-        -- Subtle specular gloss on top
-        local cardGloss = Instance.new("Frame", card)
-        cardGloss.Size = UDim2.new(1, 0, 0.45, 0)
-        cardGloss.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        cardGloss.BorderSizePixel = 0
-        rndCorner(cardGloss, 12)
-        local cgGrad = makeGrad(cardGloss, 90)
-        cgGrad.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 0.88), NumberSequenceKeypoint.new(1, 1.0)}
-
-        -- iOS Circular Rank Badge
+        -- Circular Rank Pill
         local badge = Instance.new("TextLabel", card)
-        badge.Size = UDim2.new(0, 26, 0, 26)
-        badge.Position = UDim2.new(0, 10, 0.5, -13)
-        badge.BackgroundColor3 = (index == 1) and (activeTheme and activeTheme.Accent or Color3.fromRGB(10, 132, 255)) or Color3.fromRGB(30, 38, 54)
-        badge.TextColor3 = (index == 1) and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(235, 240, 255)
+        badge.Size = UDim2.new(0, 28, 0, 28)
+        badge.Position = UDim2.new(0, 12, 0.5, -14)
+        badge.BackgroundColor3 = (index == 1) and (activeTheme and activeTheme.Accent or Color3.fromRGB(10, 132, 255)) or Color3.fromRGB(255, 255, 255)
+        badge.BackgroundTransparency = (index == 1) and 0 or 0.88
+        badge.TextColor3 = (index == 1) and Color3.fromRGB(255, 255, 255) or activeTheme.Text
         badge.Font = Enum.Font.GothamBold
-        badge.TextSize = 11.5
+        badge.TextSize = 12
         badge.Text = "#" .. tostring(index)
         rndCorner(badge, 999)
 
         local title = Instance.new("TextLabel", card)
-        title.Size = UDim2.new(1, -130, 0, 18)
-        title.Position = UDim2.new(0, 44, 0, 7)
+        title.Size = UDim2.new(1, -140, 0, 18)
+        title.Position = UDim2.new(0, 48, 0, 8)
         title.BackgroundTransparency = 1
         title.Font = Enum.Font.GothamBold
-        title.TextSize = 12.5
+        title.TextSize = 13
         title.TextColor3 = Color3.fromRGB(245, 248, 255)
         title.TextXAlignment = Enum.TextXAlignment.Left
         title.TextTruncate = Enum.TextTruncate.AtEnd
         title.Text = taskName
 
         local desc = Instance.new("TextLabel", card)
-        desc.Size = UDim2.new(1, -130, 0, 16)
-        desc.Position = UDim2.new(0, 44, 0, 26)
+        desc.Size = UDim2.new(1, -140, 0, 16)
+        desc.Position = UDim2.new(0, 48, 0, 28)
         desc.BackgroundTransparency = 1
         desc.Font = Enum.Font.Gotham
-        desc.TextSize = 9.5
-        desc.TextColor3 = (index == 1) and (activeTheme and activeTheme.Accent or Color3.fromRGB(100, 210, 255)) or (activeTheme and activeTheme.SubText or Color3.fromRGB(165, 185, 215))
+        desc.TextSize = 10
+        desc.TextColor3 = (index == 1) and activeTheme.Accent2 or activeTheme.SubText
         desc.TextXAlignment = Enum.TextXAlignment.Left
         desc.TextTruncate = Enum.TextTruncate.AtEnd
         desc.Text = (index == 1 and "Highest Priority (Runs First)" or (index == #PriorityManager.List and "Lowest Priority (Idle Fallback)" or "Active Task Priority"))
 
         local btnHolder = Instance.new("Frame", card)
-        btnHolder.Size = UDim2.new(0, 68, 0, 28)
-        btnHolder.Position = UDim2.new(1, -74, 0.5, -14)
+        btnHolder.Size = UDim2.new(0, 72, 0, 32)
+        btnHolder.Position = UDim2.new(1, -80, 0.5, -16)
         btnHolder.BackgroundTransparency = 1
 
-        -- Clean iOS Glass Arrow Up Button
+        -- Clean iOS Circular Glass Arrow Buttons
         local upBtn = Instance.new("TextButton", btnHolder)
-        upBtn.Size = UDim2.new(0, 30, 0, 28)
+        upBtn.Size = UDim2.new(0, 32, 0, 32)
         upBtn.Position = UDim2.new(0, 0, 0, 0)
-        upBtn.BackgroundColor3 = (index > 1) and (activeTheme and activeTheme.RowBg or Color3.fromRGB(28, 38, 58)) or Color3.fromRGB(20, 24, 34)
-        upBtn.TextColor3 = (index > 1) and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(90, 95, 110)
+        upBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        upBtn.BackgroundTransparency = (index > 1) and 0.85 or 0.94
+        upBtn.TextColor3 = (index > 1) and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(100, 105, 120)
         upBtn.Font = Enum.Font.GothamBold
         upBtn.TextSize = 13
-        upBtn.Text = "▲" -- Clean Unicode Arrow (Fixed Mojibake)
-        rndCorner(upBtn, 8)
-        local upStr = Instance.new("UIStroke", upBtn)
-        upStr.Color = (index > 1) and (activeTheme and activeTheme.Stroke or Color3.fromRGB(60, 80, 110)) or Color3.fromRGB(35, 40, 50)
-        upStr.Thickness = 1
-        upStr.Transparency = 0.4
+        upBtn.Text = "▲"
+        rndCorner(upBtn, 999)
         attachTactileAnimation(upBtn)
 
-        -- Clean iOS Glass Arrow Down Button
         local downBtn = Instance.new("TextButton", btnHolder)
-        downBtn.Size = UDim2.new(0, 30, 0, 28)
-        downBtn.Position = UDim2.new(0, 36, 0, 0)
-        downBtn.BackgroundColor3 = (index < #PriorityManager.List) and (activeTheme and activeTheme.RowBg or Color3.fromRGB(28, 38, 58)) or Color3.fromRGB(20, 24, 34)
-        downBtn.TextColor3 = (index < #PriorityManager.List) and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(90, 95, 110)
+        downBtn.Size = UDim2.new(0, 32, 0, 32)
+        downBtn.Position = UDim2.new(0, 40, 0, 0)
+        downBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        downBtn.BackgroundTransparency = (index < #PriorityManager.List) and 0.85 or 0.94
+        downBtn.TextColor3 = (index < #PriorityManager.List) and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(100, 105, 120)
         downBtn.Font = Enum.Font.GothamBold
         downBtn.TextSize = 13
-        downBtn.Text = "▼" -- Clean Unicode Arrow (Fixed Mojibake)
-        rndCorner(downBtn, 8)
-        local downStr = Instance.new("UIStroke", downBtn)
-        downStr.Color = (index < #PriorityManager.List) and (activeTheme and activeTheme.Stroke or Color3.fromRGB(60, 80, 110)) or Color3.fromRGB(35, 40, 50)
-        downStr.Thickness = 1
-        downStr.Transparency = 0.4
+        downBtn.Text = "▼"
+        rndCorner(downBtn, 999)
         attachTactileAnimation(downBtn)
 
         upBtn.MouseButton1Click:Connect(function()
@@ -4260,40 +4331,41 @@ stealPanelPg.BackgroundTransparency = 1
 stealPanelPg.Visible = false
 
 local spTopBar = Instance.new("Frame", stealPanelPg)
-spTopBar.Size = UDim2.new(1, 0, 0, 36)
+spTopBar.Size = UDim2.new(1, -28, 0, 38)
+spTopBar.Position = UDim2.new(0, 14, 0, 8)
 spTopBar.BackgroundTransparency = 1
 
 local spSortLbl = Instance.new("TextLabel", spTopBar)
 spSortLbl.Size = UDim2.new(0, 60, 1, 0)
-spSortLbl.Position = UDim2.new(0, 4, 0, 0)
+spSortLbl.Position = UDim2.new(0, 0, 0, 0)
 spSortLbl.BackgroundTransparency = 1
 spSortLbl.Font = Enum.Font.GothamBold
 spSortLbl.TextSize = 12
-spSortLbl.TextColor3 = Color3.fromRGB(220, 225, 240)
+spSortLbl.TextColor3 = Color3.fromRGB(160, 165, 185)
 spSortLbl.TextXAlignment = Enum.TextXAlignment.Left
 spSortLbl.Text = "Sort By:"
 
 local spSortBtn = Instance.new("TextButton", spTopBar)
-spSortBtn.Size = UDim2.new(0, 180, 0, 28)
-spSortBtn.Position = UDim2.new(0, 68, 0.5, -14)
-spSortBtn.BackgroundColor3 = Color3.fromRGB(20, 28, 48)
-spSortBtn.BackgroundTransparency = 0.35
+spSortBtn.Size = UDim2.new(0, 180, 0, 30)
+spSortBtn.Position = UDim2.new(0, 65, 0.5, -15)
+spSortBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+spSortBtn.BackgroundTransparency = 0.88
 spSortBtn.BorderSizePixel = 0
 spSortBtn.Font = Enum.Font.GothamMedium
-spSortBtn.TextSize = 11
+spSortBtn.TextSize = 11.5
 spSortBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 spSortBtn.Text = State.spSortChoice .. "  v"
-rndCorner(spSortBtn, 8)
+rndCorner(spSortBtn, 999) -- iOS pill
 attachTactileAnimation(spSortBtn)
 
 local spSortStr = Instance.new("UIStroke", spSortBtn)
 spSortStr.Thickness = 1
-spSortStr.Color = activeTheme.Stroke
-spSortStr.Transparency = 0.4
+spSortStr.Color = Color3.fromRGB(255, 255, 255)
+spSortStr.Transparency = 0.82
 
 local spListScrl = Instance.new("ScrollingFrame", stealPanelPg)
-spListScrl.Size = UDim2.new(1, 0, 1, -42)
-spListScrl.Position = UDim2.new(0, 0, 0, 40)
+spListScrl.Size = UDim2.new(1, 0, 1, -48)
+spListScrl.Position = UDim2.new(0, 0, 0, 48)
 spListScrl.BackgroundTransparency = 1
 spListScrl.BorderSizePixel = 0
 spListScrl.ScrollBarThickness = 3
@@ -4301,106 +4373,168 @@ spListScrl.AutomaticCanvasSize = Enum.AutomaticSize.Y
 spListScrl.CanvasSize = UDim2.new(0, 0, 0, 0)
 
 local spListLay = Instance.new("UIListLayout", spListScrl)
-spListLay.Padding = UDim.new(0, 6)
+spListLay.Padding = UDim.new(0, 8)
 spListLay.SortOrder = Enum.SortOrder.LayoutOrder
 
 local spListPad = Instance.new("UIPadding", spListScrl)
 spListPad.PaddingTop = UDim.new(0, 4)
-spListPad.PaddingBottom = UDim.new(0, 12)
-spListPad.PaddingLeft = UDim.new(0, 4)
-spListPad.PaddingRight = UDim.new(0, 6)
+spListPad.PaddingBottom = UDim.new(0, 16)
+spListPad.PaddingLeft = UDim.new(0, 14)
+spListPad.PaddingRight = UDim.new(0, 14)
 
 -- Settings Page
-local setPg = Instance.new("Frame", pgsHold)
+local setPg = Instance.new("ScrollingFrame", pgsHold)
 setPg.Name = "SettingsPage"
 setPg.Size = UDim2.new(1, 0, 1, 0)
 setPg.BackgroundTransparency = 1
+setPg.BorderSizePixel = 0
+setPg.ScrollBarThickness = 3
+setPg.AutomaticCanvasSize = Enum.AutomaticSize.Y
+setPg.CanvasSize = UDim2.new(0, 0, 0, 0)
 setPg.Visible = false
 
-local thmScrl = Instance.new("ScrollingFrame", setPg)
-thmScrl.Size = UDim2.new(1, 0, 1, -94)
+local setPad = Instance.new("UIPadding", setPg)
+setPad.PaddingTop = UDim.new(0, 14)
+setPad.PaddingBottom = UDim.new(0, 24)
+setPad.PaddingLeft = UDim.new(0, 14)
+setPad.PaddingRight = UDim.new(0, 14)
+
+local setLay = Instance.new("UIListLayout", setPg)
+setLay.Padding = UDim.new(0, 16)
+setLay.SortOrder = Enum.SortOrder.LayoutOrder
+
+-- Section 1: Themes Inset Card
+local thmSectionTitle = Instance.new("TextLabel", setPg)
+thmSectionTitle.Size = UDim2.new(1, 0, 0, 18)
+thmSectionTitle.BackgroundTransparency = 1
+thmSectionTitle.Font = Enum.Font.GothamBold
+thmSectionTitle.TextSize = 11
+thmSectionTitle.TextColor3 = Color3.fromRGB(150, 155, 175)
+thmSectionTitle.TextXAlignment = Enum.TextXAlignment.Left
+thmSectionTitle.Text = "APPEARANCE & THEMES"
+thmSectionTitle.LayoutOrder = 1
+
+local thmCard = Instance.new("Frame", setPg)
+thmCard.Size = UDim2.new(1, 0, 0, 160)
+thmCard.BackgroundColor3 = activeTheme.CardBg
+thmCard.BackgroundTransparency = 0.28
+thmCard.BorderSizePixel = 0
+thmCard.LayoutOrder = 2
+rndCorner(thmCard, 14)
+
+local thmCardStr = Instance.new("UIStroke", thmCard)
+thmCardStr.Thickness = 1
+thmCardStr.Color = Color3.fromRGB(255, 255, 255)
+thmCardStr.Transparency = 0.82
+
+local thmScrl = Instance.new("Frame", thmCard)
+thmScrl.Size = UDim2.new(1, -16, 1, -16)
+thmScrl.Position = UDim2.new(0, 8, 0, 8)
 thmScrl.BackgroundTransparency = 1
-thmScrl.BorderSizePixel = 0
-thmScrl.ScrollBarThickness = 3
-thmScrl.CanvasSize = UDim2.new(0, 0, 0, 0)
-thmScrl.AutomaticCanvasSize = Enum.AutomaticSize.Y
 
 local thmGrid = Instance.new("UIGridLayout", thmScrl)
 thmGrid.CellPadding = UDim2.new(0, 8, 0, 8)
 thmGrid.CellSize = UDim2.new(0.5, -4, 0, 36)
 thmGrid.SortOrder = Enum.SortOrder.LayoutOrder
 
+-- Section 2: Window Transparency Slider Card
+local transSectionTitle = Instance.new("TextLabel", setPg)
+transSectionTitle.Size = UDim2.new(1, 0, 0, 18)
+transSectionTitle.BackgroundTransparency = 1
+transSectionTitle.Font = Enum.Font.GothamBold
+transSectionTitle.TextSize = 11
+transSectionTitle.TextColor3 = Color3.fromRGB(150, 155, 175)
+transSectionTitle.TextXAlignment = Enum.TextXAlignment.Left
+transSectionTitle.Text = "GLASS TRANSLUCENCY"
+transSectionTitle.LayoutOrder = 3
+
 local sldrUI = {}
 sldrUI.Bg = Instance.new("Frame", setPg)
-sldrUI.Bg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-sldrUI.Bg.BackgroundTransparency = 0.35
-sldrUI.Bg.Position = UDim2.new(0, 0, 1, -86)
-sldrUI.Bg.Size = UDim2.new(1, 0, 0, 42)
+sldrUI.Bg.BackgroundColor3 = activeTheme.CardBg
+sldrUI.Bg.BackgroundTransparency = 0.28
+sldrUI.Bg.Size = UDim2.new(1, 0, 0, 64)
 sldrUI.Bg.BorderSizePixel = 0
-rndCorner(sldrUI.Bg, 12)
-sldrUI.Grad = makeGrad(sldrUI.Bg, 135)
+sldrUI.Bg.LayoutOrder = 4
+rndCorner(sldrUI.Bg, 14)
+
 sldrUI.Str = Instance.new("UIStroke", sldrUI.Bg)
 sldrUI.Str.Thickness = 1
-sldrUI.Str.Transparency = 0.5
+sldrUI.Str.Color = Color3.fromRGB(255, 255, 255)
+sldrUI.Str.Transparency = 0.82
 
 sldrUI.Txt = Instance.new("TextLabel", sldrUI.Bg)
 sldrUI.Txt.BackgroundTransparency = 1
-sldrUI.Txt.Position = UDim2.new(0, 10, 0, 4)
-sldrUI.Txt.Size = UDim2.new(1, -20, 0, 15)
+sldrUI.Txt.Position = UDim2.new(0, 14, 0, 8)
+sldrUI.Txt.Size = UDim2.new(1, -28, 0, 18)
 sldrUI.Txt.Font = Enum.Font.GothamMedium
-sldrUI.Txt.TextSize = 12
+sldrUI.Txt.TextSize = 13
+sldrUI.Txt.TextColor3 = Color3.fromRGB(255, 255, 255)
 sldrUI.Txt.TextXAlignment = Enum.TextXAlignment.Left
-sldrUI.Txt.Text = "Transparency: 0%"
+sldrUI.Txt.Text = "Window Transparency: 0%"
 
--- iOS Volume-style sleek slider bar
+-- Sleek Apple Volume Slider Track
 sldrUI.Trk = Instance.new("Frame", sldrUI.Bg)
-sldrUI.Trk.BackgroundColor3 = Color3.fromRGB(42, 46, 60)
+sldrUI.Trk.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+sldrUI.Trk.BackgroundTransparency = 0.85
 sldrUI.Trk.BorderSizePixel = 0
-sldrUI.Trk.Position = UDim2.new(0, 10, 0, 24)
-sldrUI.Trk.Size = UDim2.new(1, -20, 0, 6)
+sldrUI.Trk.Position = UDim2.new(0, 14, 0, 36)
+sldrUI.Trk.Size = UDim2.new(1, -28, 0, 6)
 rndCorner(sldrUI.Trk, 999)
 
 sldrUI.Fil = Instance.new("Frame", sldrUI.Trk)
 sldrUI.Fil.BorderSizePixel = 0
 sldrUI.Fil.Size = UDim2.new(0, 0, 1, 0)
+sldrUI.Fil.BackgroundColor3 = activeTheme.Accent
 rndCorner(sldrUI.Fil, 999)
 
 sldrUI.Kn = Instance.new("TextButton", sldrUI.Trk)
 sldrUI.Kn.Text = ""
 sldrUI.Kn.AutoButtonColor = false
 sldrUI.Kn.BorderSizePixel = 0
-sldrUI.Kn.Size = UDim2.new(0, 16, 0, 16)
-sldrUI.Kn.Position = UDim2.new(0, -8, 0.5, -8)
+sldrUI.Kn.Size = UDim2.new(0, 18, 0, 18)
+sldrUI.Kn.Position = UDim2.new(0, -9, 0.5, -9)
+sldrUI.Kn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 rndCorner(sldrUI.Kn, 999)
 
+local knStr = Instance.new("UIStroke", sldrUI.Kn)
+knStr.Thickness = 1
+knStr.Color = Color3.fromRGB(200, 205, 220)
+knStr.Transparency = 0.4
+
+-- Section 3: Active Theme Preview Card
 local prevBox = Instance.new("Frame", setPg)
-prevBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-prevBox.BackgroundTransparency = 0.35
-prevBox.Position = UDim2.new(0, 0, 1, -36)
-prevBox.Size = UDim2.new(1, 0, 0, 34)
+prevBox.BackgroundColor3 = activeTheme.CardBg
+prevBox.BackgroundTransparency = 0.28
+prevBox.Size = UDim2.new(1, 0, 0, 48)
 prevBox.BorderSizePixel = 0
-rndCorner(prevBox, 12)
-local prevGrad = makeGrad(prevBox, 135)
+prevBox.LayoutOrder = 5
+rndCorner(prevBox, 14)
+
 local prevStr = Instance.new("UIStroke", prevBox)
 prevStr.Thickness = 1
-prevStr.Transparency = 0.5
+prevStr.Color = Color3.fromRGB(255, 255, 255)
+prevStr.Transparency = 0.82
 
 local prevTxt = Instance.new("TextLabel", prevBox)
 prevTxt.BackgroundTransparency = 1
-prevTxt.Position = UDim2.new(0, 12, 0, 0)
-prevTxt.Size = UDim2.new(1, -24, 1, 0)
+prevTxt.Position = UDim2.new(0, 14, 0, 0)
+prevTxt.Size = UDim2.new(1, -28, 1, 0)
 prevTxt.Font = Enum.Font.GothamMedium
-prevTxt.TextSize = 12.5
+prevTxt.TextSize = 13
+prevTxt.TextColor3 = Color3.fromRGB(245, 248, 255)
 prevTxt.TextXAlignment = Enum.TextXAlignment.Left
-prevTxt.Text = "Current Theme: Sapphire"
+prevTxt.Text = "Current Palette: " .. (activeTheme.Name or "iOS System Blue")
 
+-- ==============================================================================
+-- [ STEAL PANEL RENDERER (App Store Style Card Collection) ]
+-- ==============================================================================
 local cBtns = {}
 local tBtns = {}
 local cList = { 
-    {Name = "Farm", Page = farmPg, Title = "Farm"},
-    {Name = "Priority", Page = priorityPg, Title = "Task Priority"},
-    {Name = "Steal Panel", Page = stealPanelPg, Title = "Steal Panel"},
-    {Name = "Settings", Page = setPg, Title = "Settings"} 
+    {Name = "Farm", Page = farmPg, Title = "Farm Automation", Glyph = "🌿"},
+    {Name = "Priority", Page = priorityPg, Title = "Task Priorities", Glyph = "⚡"},
+    {Name = "Steal Panel", Page = stealPanelPg, Title = "Radar & Steal", Glyph = "🎯"},
+    {Name = "Settings", Page = setPg, Title = "Preferences", Glyph = "⚙️"} 
 }
 
 local renderStealPanel = nil
@@ -4532,42 +4666,34 @@ renderStealPanel = function()
 
     for i, item in ipairs(eggItems) do
         local card = Instance.new("Frame", spListScrl)
-        card.Size = UDim2.new(1, -6, 0, 52)
+        card.Size = UDim2.new(1, 0, 0, 56)
         card.BackgroundColor3 = activeTheme.CardBg
-        card.BackgroundTransparency = 0.35
+        card.BackgroundTransparency = 0.28
         card.BorderSizePixel = 0
         card.LayoutOrder = i
-        rndCorner(card, 12)
+        rndCorner(card, 14)
 
         local cStr = Instance.new("UIStroke", card)
         cStr.Thickness = 1
-        cStr.Color = activeTheme.Stroke
-        cStr.Transparency = 0.5
+        cStr.Color = Color3.fromRGB(255, 255, 255)
+        cStr.Transparency = 0.85
 
-        -- Specular top gloss on card
-        local cardGloss = Instance.new("Frame", card)
-        cardGloss.Size = UDim2.new(1, 0, 0.45, 0)
-        cardGloss.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        cardGloss.BorderSizePixel = 0
-        rndCorner(cardGloss, 12)
-        local cgGrad = makeGrad(cardGloss, 90)
-        cgGrad.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 0.88), NumberSequenceKeypoint.new(1, 1.0)}
-
+        -- App Icon Squircle
         local img = Instance.new("ImageLabel", card)
-        img.Size = UDim2.new(0, 38, 0, 38)
-        img.Position = UDim2.new(0, 7, 0.5, -19)
-        img.BackgroundColor3 = Color3.fromRGB(18, 24, 38)
+        img.Size = UDim2.new(0, 42, 0, 42)
+        img.Position = UDim2.new(0, 8, 0.5, -21)
+        img.BackgroundColor3 = Color3.fromRGB(18, 22, 34)
         img.BackgroundTransparency = 0.4
         img.BorderSizePixel = 0
         img.Image = item.Icon
-        rndCorner(img, 8)
+        rndCorner(img, 10)
 
         local nameLbl = Instance.new("TextLabel", card)
         nameLbl.Size = UDim2.new(1, -145, 0, 18)
-        nameLbl.Position = UDim2.new(0, 52, 0, 8)
+        nameLbl.Position = UDim2.new(0, 58, 0, 9)
         nameLbl.BackgroundTransparency = 1
         nameLbl.Font = Enum.Font.GothamBold
-        nameLbl.TextSize = 12.5
+        nameLbl.TextSize = 13
         nameLbl.TextColor3 = Color3.fromRGB(255, 255, 255)
         nameLbl.TextXAlignment = Enum.TextXAlignment.Left
         nameLbl.TextTruncate = Enum.TextTruncate.AtEnd
@@ -4575,18 +4701,18 @@ renderStealPanel = function()
 
         local subLbl = Instance.new("TextLabel", card)
         subLbl.Size = UDim2.new(1, -145, 0, 16)
-        subLbl.Position = UDim2.new(0, 52, 0, 27)
+        subLbl.Position = UDim2.new(0, 58, 0, 29)
         subLbl.BackgroundTransparency = 1
         subLbl.Font = Enum.Font.Gotham
-        subLbl.TextSize = 10
+        subLbl.TextSize = 10.5
         subLbl.TextColor3 = activeTheme.SubText
         subLbl.TextXAlignment = Enum.TextXAlignment.Left
         subLbl.Text = string.format("%s  |  %.2fx  |  %s", formatMoneyPerSec(item.Value), item.Scale, item.Area)
 
-        -- Apple App Store "GET" style Pill Action Button
+        -- Apple App Store "GET" style Action Pill
         local actBtn = Instance.new("TextButton", card)
-        actBtn.Size = UDim2.new(0, 80, 0, 30)
-        actBtn.Position = UDim2.new(1, -88, 0.5, -15)
+        actBtn.Size = UDim2.new(0, 74, 0, 30)
+        actBtn.Position = UDim2.new(1, -82, 0.5, -15)
         actBtn.BorderSizePixel = 0
         actBtn.Font = Enum.Font.GothamBold
         actBtn.TextSize = 11.5
@@ -4594,9 +4720,9 @@ renderStealPanel = function()
         attachTactileAnimation(actBtn)
 
         local isThisTarget = (State.targetedSpecificUid == item.Uid)
-        actBtn.BackgroundColor3 = isThisTarget and Color3.fromRGB(255, 69, 58) or activeTheme.Accent -- Apple System Red or Accent
+        actBtn.BackgroundColor3 = isThisTarget and Color3.fromRGB(255, 69, 58) or activeTheme.Accent
         actBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-        actBtn.Text = isThisTarget and "Stop Steal" or "Steal"
+        actBtn.Text = isThisTarget and "STOP" or "STEAL"
 
         State.activeStealButtons[item.Uid] = actBtn
 
@@ -4610,7 +4736,7 @@ renderStealPanel = function()
                     HalloweenStealManager:Abort()
                 end
                 actBtn.BackgroundColor3 = activeTheme.Accent
-                actBtn.Text = "Steal"
+                actBtn.Text = "STEAL"
             else
                 if State.isStealingActive then
                     abortStealRoutine()
@@ -4622,7 +4748,7 @@ renderStealPanel = function()
                 for u, b in pairs(State.activeStealButtons) do
                     if b and b.Parent then
                         b.BackgroundColor3 = activeTheme.Accent
-                        b.Text = "Steal"
+                        b.Text = "STEAL"
                     end
                 end
 
@@ -4631,7 +4757,7 @@ renderStealPanel = function()
                 State.targetedSpecificHalloweenEgg = item.EggInstance
 
                 actBtn.BackgroundColor3 = Color3.fromRGB(255, 69, 58)
-                actBtn.Text = "Stop Steal"
+                actBtn.Text = "STOP"
 
                 task.spawn(function()
                     if item.IsHalloween then
@@ -4658,264 +4784,209 @@ spSortBtn.MouseButton1Click:Connect(function()
 end)
 
 -- ==============================================================================
--- [ iOS GROUPED INSET CATEGORIES & CONTROLS BUILDER ]
+-- [ AUTHENTIC APPLE INSET GROUPED SECTIONS & CONTROLS (UITableViewStyleInsetGrouped) ]
 -- ==============================================================================
 local function createCategory(title, parent, order, defaultOpen)
-    local frame = Instance.new("Frame", parent)
-    frame.Size = UDim2.new(1, 0, 0, 46)
-    frame.BackgroundColor3 = activeTheme.CardBg
-    frame.BackgroundTransparency = 0.35
-    frame.BorderSizePixel = 0
-    frame.ClipsDescendants = true
-    frame.LayoutOrder = order
-    rndCorner(frame, 14) -- Apple squircle
-    
-    local fStr = Instance.new("UIStroke", frame)
-    fStr.Thickness = 1
-    fStr.Color = activeTheme.Stroke
-    fStr.Transparency = 0.45
+    local sectionContainer = Instance.new("Frame", parent)
+    sectionContainer.Name = title .. "_Section"
+    sectionContainer.Size = UDim2.new(1, 0, 0, 0)
+    sectionContainer.BackgroundTransparency = 1
+    sectionContainer.AutomaticSize = Enum.AutomaticSize.Y
+    sectionContainer.LayoutOrder = order
 
-    -- Specular gloss on category top
-    local catGloss = Instance.new("Frame", frame)
-    catGloss.Size = UDim2.new(1, 0, 0, 22)
-    catGloss.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    catGloss.BorderSizePixel = 0
-    rndCorner(catGloss, 14)
-    local cgGrad = makeGrad(catGloss, 90)
-    cgGrad.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 0.88), NumberSequenceKeypoint.new(1, 1.0)}
+    local secLay = Instance.new("UIListLayout", sectionContainer)
+    secLay.Padding = UDim.new(0, 6)
+    secLay.SortOrder = Enum.SortOrder.LayoutOrder
 
-    local header = Instance.new("TextButton", frame)
-    header.Size = UDim2.new(1, 0, 0, 46)
+    -- Section Header (Uppercase Small Subtitle like iOS Settings)
+    local header = Instance.new("TextButton", sectionContainer)
+    header.Size = UDim2.new(1, 0, 0, 24)
     header.BackgroundTransparency = 1
     header.Text = ""
     header.AutoButtonColor = false
-    attachTactileAnimation(header)
-
-    -- Left accent pill
-    local bar = Instance.new("Frame", header)
-    bar.Size = UDim2.new(0, 3, 0, 20)
-    bar.Position = UDim2.new(0, 14, 0.5, -10)
-    bar.BackgroundColor3 = activeTheme.Accent
-    bar.BorderSizePixel = 0
-    rndCorner(bar, 999)
+    header.LayoutOrder = 1
 
     local titleLbl = Instance.new("TextLabel", header)
-    titleLbl.Size = UDim2.new(1, -75, 1, 0)
-    titleLbl.Position = UDim2.new(0, 26, 0, 0)
+    titleLbl.Size = UDim2.new(1, -30, 1, 0)
+    titleLbl.Position = UDim2.new(0, 4, 0, 0)
     titleLbl.BackgroundTransparency = 1
     titleLbl.Font = Enum.Font.GothamBold
-    titleLbl.TextSize = 13
-    titleLbl.TextColor3 = Color3.fromRGB(250, 252, 255)
+    titleLbl.TextSize = 11.5
+    titleLbl.TextColor3 = Color3.fromRGB(150, 155, 175)
     titleLbl.TextXAlignment = Enum.TextXAlignment.Left
     titleLbl.Text = string.upper(title)
 
     local arrow = Instance.new("TextLabel", header)
-    arrow.Size = UDim2.new(0, 30, 0, 30)
-    arrow.AnchorPoint = Vector2.new(0.5, 0.5)
-    arrow.Position = UDim2.new(1, -22, 0.5, 0)
+    arrow.Size = UDim2.new(0, 20, 1, 0)
+    arrow.Position = UDim2.new(1, -20, 0, 0)
     arrow.BackgroundTransparency = 1
     arrow.Font = Enum.Font.GothamBold
-    arrow.TextSize = 14
+    arrow.TextSize = 12
     arrow.TextColor3 = activeTheme.Accent2
     arrow.Text = ">"
     arrow.Rotation = defaultOpen and 90 or 0
 
-    local content = Instance.new("Frame", frame)
-    content.Name = "Content"
-    content.Position = UDim2.new(0, 0, 0, 46)
-    content.Size = UDim2.new(1, 0, 0, 0)
-    content.BackgroundTransparency = 1
-    content.Visible = defaultOpen or false
+    -- Unified Inset Grouped Card
+    local groupCard = Instance.new("Frame", sectionContainer)
+    groupCard.Name = "GroupedCard"
+    groupCard.Size = UDim2.new(1, 0, 0, 0)
+    groupCard.BackgroundColor3 = activeTheme.CardBg
+    groupCard.BackgroundTransparency = 0.28
+    groupCard.BorderSizePixel = 0
+    groupCard.ClipsDescendants = true
+    groupCard.AutomaticSize = Enum.AutomaticSize.Y
+    groupCard.Visible = defaultOpen or false
+    groupCard.LayoutOrder = 2
+    rndCorner(groupCard, 14) -- Apple squircle
 
-    local cPad = Instance.new("UIPadding", content)
-    cPad.PaddingTop = UDim.new(0, 6)
-    cPad.PaddingBottom = UDim.new(0, 12)
-    cPad.PaddingLeft = UDim.new(0, 8)
-    cPad.PaddingRight = UDim.new(0, 8)
+    local gStr = Instance.new("UIStroke", groupCard)
+    gStr.Thickness = 1
+    gStr.Color = Color3.fromRGB(255, 255, 255)
+    gStr.Transparency = 0.85
 
-    local cLay = Instance.new("UIListLayout", content)
-    cLay.Padding = UDim.new(0, 8)
+    local cLay = Instance.new("UIListLayout", groupCard)
+    cLay.Padding = UDim.new(0, 0) -- Seamless rows with hairline separators
     cLay.SortOrder = Enum.SortOrder.LayoutOrder
 
     local isOpen = defaultOpen or false
 
-    local function updateSize()
-        local targetH = 46 + cLay.AbsoluteContentSize.Y + 18
-        if isOpen then
-            content.Visible = true
-            doTween(frame, smoothTw, {Size = UDim2.new(1, 0, 0, targetH)})
-            doTween(arrow, fastTw, {Rotation = 90})
-        else
-            local tw = doTween(frame, smoothTw, {Size = UDim2.new(1, 0, 0, 46)})
-            doTween(arrow, fastTw, {Rotation = 0})
-            tw.Completed:Connect(function()
-                if not isOpen then content.Visible = false end
-            end)
-        end
-    end
-
-    cLay:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-        if isOpen then
-            local targetH = 46 + cLay.AbsoluteContentSize.Y + 18
-            doTween(frame, smoothTw, {Size = UDim2.new(1, 0, 0, targetH)})
-        end
-    end)
-
     header.MouseButton1Click:Connect(function()
         isOpen = not isOpen
-        updateSize()
+        groupCard.Visible = isOpen
+        doTween(arrow, fastTw, {Rotation = isOpen and 90 or 0})
     end)
 
-    if defaultOpen then
-        task.defer(function()
-            task.wait(0.08)
-            if isOpen then
-                local targetH = 46 + cLay.AbsoluteContentSize.Y + 18
-                frame.Size = UDim2.new(1, 0, 0, targetH)
-            end
-        end)
-    end
-
     table.insert(State.themeSubscribers, function(th)
-        frame.BackgroundColor3 = th.CardBg
-        fStr.Color = th.Stroke
-        bar.BackgroundColor3 = th.Accent
+        groupCard.BackgroundColor3 = th.CardBg
         arrow.TextColor3 = th.Accent2
     end)
 
-    return content
+    return groupCard
 end
 
--- [ AUTHENTIC APPLE iOS SWITCH TOGGLE ]
+-- [ AUTHENTIC APPLE UISwitch TOGGLE ]
 local function createToggle(title, desc, defaultVal, parent, order, callback)
     local row = Instance.new("Frame", parent)
-    row.Size = UDim2.new(1, -4, 0, 50)
-    row.BackgroundColor3 = activeTheme.RowBg
-    row.BackgroundTransparency = 0.40
+    row.Size = UDim2.new(1, 0, 0, 54)
+    row.BackgroundTransparency = 1
     row.BorderSizePixel = 0
     row.LayoutOrder = order
-    rndCorner(row, 12)
 
-    local rowStr = Instance.new("UIStroke", row)
-    rowStr.Thickness = 1
-    rowStr.Color = activeTheme.Stroke
-    rowStr.Transparency = 0.55
+    -- Hair-thin iOS Separator at bottom
+    local sep = Instance.new("Frame", row)
+    sep.Size = UDim2.new(1, -16, 0, 1)
+    sep.Position = UDim2.new(0, 16, 1, -1)
+    sep.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    sep.BackgroundTransparency = 0.90
+    sep.BorderSizePixel = 0
 
     local tit = Instance.new("TextLabel", row)
-    tit.Size = UDim2.new(1, -70, 0, 18)
-    tit.Position = UDim2.new(0, 12, 0, 6)
+    tit.Size = UDim2.new(1, -74, 0, 18)
+    tit.Position = UDim2.new(0, 16, 0, 9)
     tit.BackgroundTransparency = 1
     tit.Font = Enum.Font.GothamBold
-    tit.TextSize = 12.5
+    tit.TextSize = 13
     tit.TextColor3 = Color3.fromRGB(245, 248, 255)
     tit.TextXAlignment = Enum.TextXAlignment.Left
     tit.Text = title
 
     local sub = Instance.new("TextLabel", row)
-    sub.Size = UDim2.new(1, -70, 0, 20)
-    sub.Position = UDim2.new(0, 12, 0, 24)
+    sub.Size = UDim2.new(1, -74, 0, 18)
+    sub.Position = UDim2.new(0, 16, 0, 27)
     sub.BackgroundTransparency = 1
     sub.Font = Enum.Font.Gotham
-    sub.TextSize = 9.5
+    sub.TextSize = 10
     sub.TextColor3 = activeTheme.SubText
     sub.TextXAlignment = Enum.TextXAlignment.Left
-    sub.TextWrapped = true
+    sub.TextTruncate = Enum.TextTruncate.AtEnd
     sub.Text = desc
 
-    -- iOS Pill Switch Frame
+    -- Apple UISwitch Pill Track
     local sw = Instance.new("TextButton", row)
-    sw.Size = UDim2.new(0, 44, 0, 24)
-    sw.Position = UDim2.new(1, -54, 0.5, -12)
-    sw.BackgroundColor3 = defaultVal and activeTheme.Accent or Color3.fromRGB(48, 52, 64)
-    sw.BackgroundTransparency = defaultVal and 0.05 or 0.35
+    sw.Size = UDim2.new(0, 46, 0, 26)
+    sw.Position = UDim2.new(1, -60, 0.5, -13)
+    sw.BackgroundColor3 = defaultVal and activeTheme.Accent or Color3.fromRGB(120, 120, 128)
+    sw.BackgroundTransparency = defaultVal and 0.05 or 0.65
     sw.BorderSizePixel = 0
     sw.Text = ""
-    rndCorner(sw, 999) -- Full pill
+    rndCorner(sw, 999)
     attachTactileAnimation(sw)
 
     local swStr = Instance.new("UIStroke", sw)
     swStr.Thickness = 1
-    swStr.Color = defaultVal and activeTheme.Accent2 or Color3.fromRGB(80, 85, 105)
-    swStr.Transparency = 0.4
+    swStr.Color = Color3.fromRGB(255, 255, 255)
+    swStr.Transparency = defaultVal and 0.5 or 0.85
 
-    -- iOS Thumb / White Glass Knob
+    -- Apple White Circular Thumb
     local dot = Instance.new("Frame", sw)
-    dot.Size = UDim2.new(0, 18, 0, 18)
-    dot.Position = defaultVal and UDim2.new(1, -21, 0.5, -9) or UDim2.new(0, 3, 0.5, -9)
+    dot.Size = UDim2.new(0, 22, 0, 22)
+    dot.Position = defaultVal and UDim2.new(1, -24, 0.5, -11) or UDim2.new(0, 2, 0.5, -11)
     dot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     dot.BorderSizePixel = 0
     rndCorner(dot, 999)
-
-    local dotStroke = Instance.new("UIStroke", dot)
-    dotStroke.Thickness = 1
-    dotStroke.Color = Color3.fromRGB(200, 205, 220)
-    dotStroke.Transparency = 0.5
 
     local state = defaultVal
     sw.MouseButton1Click:Connect(function()
         state = not state
         doTween(sw, fastTw, {
-            BackgroundColor3 = state and activeTheme.Accent or Color3.fromRGB(48, 52, 64),
-            BackgroundTransparency = state and 0.05 or 0.35
+            BackgroundColor3 = state and activeTheme.Accent or Color3.fromRGB(120, 120, 128),
+            BackgroundTransparency = state and 0.05 or 0.65
         })
         doTween(swStr, fastTw, {
-            Color = state and activeTheme.Accent2 or Color3.fromRGB(80, 85, 105)
+            Transparency = state and 0.5 or 0.85
         })
-        doTween(dot, iosSpring, {Position = state and UDim2.new(1, -21, 0.5, -9) or UDim2.new(0, 3, 0.5, -9)})
+        doTween(dot, iosSpring, {Position = state and UDim2.new(1, -24, 0.5, -11) or UDim2.new(0, 2, 0.5, -11)})
         if callback then callback(state) end
     end)
 
     table.insert(State.themeSubscribers, function(th)
-        row.BackgroundColor3 = th.RowBg
-        rowStr.Color = th.Stroke
         sub.TextColor3 = th.SubText
         if state then 
             sw.BackgroundColor3 = th.Accent
-            swStr.Color = th.Accent2
         end
     end)
 
     return row
 end
 
--- [ APPLE iOS VOLUME-STYLE SLIDER ]
+-- [ AUTHENTIC APPLE UISlider ]
 local function createSlider(title, desc, min, max, defaultVal, increment, parent, order, callback)
     local row = Instance.new("Frame", parent)
-    row.Size = UDim2.new(1, -4, 0, 52)
-    row.BackgroundColor3 = activeTheme.RowBg
-    row.BackgroundTransparency = 0.40
+    row.Size = UDim2.new(1, 0, 0, 56)
+    row.BackgroundTransparency = 1
     row.BorderSizePixel = 0
     row.LayoutOrder = order
-    rndCorner(row, 12)
 
-    local rowStr = Instance.new("UIStroke", row)
-    rowStr.Thickness = 1
-    rowStr.Color = activeTheme.Stroke
-    rowStr.Transparency = 0.55
+    local sep = Instance.new("Frame", row)
+    sep.Size = UDim2.new(1, -16, 0, 1)
+    sep.Position = UDim2.new(0, 16, 1, -1)
+    sep.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    sep.BackgroundTransparency = 0.90
+    sep.BorderSizePixel = 0
 
     local tit = Instance.new("TextLabel", row)
-    tit.Size = UDim2.new(1, -95, 0, 18)
-    tit.Position = UDim2.new(0, 12, 0, 6)
+    tit.Size = UDim2.new(1, -110, 0, 18)
+    tit.Position = UDim2.new(0, 16, 0, 9)
     tit.BackgroundTransparency = 1
     tit.Font = Enum.Font.GothamBold
-    tit.TextSize = 12.5
+    tit.TextSize = 13
     tit.TextColor3 = Color3.fromRGB(245, 248, 255)
     tit.TextXAlignment = Enum.TextXAlignment.Left
     tit.Text = title
 
     local sub = Instance.new("TextLabel", row)
-    sub.Size = UDim2.new(1, -95, 0, 24)
-    sub.Position = UDim2.new(0, 12, 0, 24)
+    sub.Size = UDim2.new(1, -110, 0, 18)
+    sub.Position = UDim2.new(0, 16, 0, 27)
     sub.BackgroundTransparency = 1
     sub.Font = Enum.Font.Gotham
-    sub.TextSize = 9.5
+    sub.TextSize = 10
     sub.TextColor3 = activeTheme.SubText
     sub.TextXAlignment = Enum.TextXAlignment.Left
     sub.Text = desc
 
     local valLbl = Instance.new("TextLabel", row)
     valLbl.Size = UDim2.new(0, 80, 0, 18)
-    valLbl.Position = UDim2.new(1, -90, 0, 6)
+    valLbl.Position = UDim2.new(1, -95, 0, 9)
     valLbl.BackgroundTransparency = 1
     valLbl.Font = Enum.Font.GothamBold
     valLbl.TextSize = 12
@@ -4923,11 +4994,12 @@ local function createSlider(title, desc, min, max, defaultVal, increment, parent
     valLbl.TextXAlignment = Enum.TextXAlignment.Right
     valLbl.Text = tostring(defaultVal)
 
-    -- iOS Track
+    -- Apple Slider Track
     local trk = Instance.new("Frame", row)
-    trk.Size = UDim2.new(0, 85, 0, 6)
-    trk.Position = UDim2.new(1, -95, 0.5, 7)
-    trk.BackgroundColor3 = Color3.fromRGB(42, 46, 60)
+    trk.Size = UDim2.new(0, 90, 0, 5)
+    trk.Position = UDim2.new(1, -100, 0.5, 7)
+    trk.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    trk.BackgroundTransparency = 0.85
     trk.BorderSizePixel = 0
     rndCorner(trk, 999)
 
@@ -4938,7 +5010,6 @@ local function createSlider(title, desc, min, max, defaultVal, increment, parent
     fil.BorderSizePixel = 0
     rndCorner(fil, 999)
 
-    -- iOS White Knob
     local kn = Instance.new("TextButton", trk)
     kn.Size = UDim2.new(0, 16, 0, 16)
     kn.Position = UDim2.new(pct, -8, 0.5, -8)
@@ -4946,11 +5017,6 @@ local function createSlider(title, desc, min, max, defaultVal, increment, parent
     kn.BorderSizePixel = 0
     kn.Text = ""
     rndCorner(kn, 999)
-
-    local knStr = Instance.new("UIStroke", kn)
-    knStr.Thickness = 1
-    knStr.Color = Color3.fromRGB(200, 205, 220)
-    knStr.Transparency = 0.5
 
     local function update(inputPos)
         local relX = math.clamp(inputPos.X - trk.AbsolutePosition.X, 0, trk.AbsoluteSize.X)
@@ -4981,8 +5047,6 @@ local function createSlider(title, desc, min, max, defaultVal, increment, parent
     end)
 
     table.insert(State.themeSubscribers, function(th)
-        row.BackgroundColor3 = th.RowBg
-        rowStr.Color = th.Stroke
         sub.TextColor3 = th.SubText
         valLbl.TextColor3 = th.Accent
         fil.BackgroundColor3 = th.Accent
@@ -4991,67 +5055,66 @@ local function createSlider(title, desc, min, max, defaultVal, increment, parent
     return row
 end
 
--- [ iOS INSET PICKER / DROPDOWN ]
+-- [ AUTHENTIC APPLE INSET PICKER / DROPDOWN ]
 local function createDropdown(title, desc, items, defaultVal, parent, order, callback)
     local isExpanded = false
     local row = Instance.new("Frame", parent)
-    row.Size = UDim2.new(1, -4, 0, 52)
-    row.BackgroundColor3 = activeTheme.RowBg
-    row.BackgroundTransparency = 0.40
+    row.Size = UDim2.new(1, 0, 0, 54)
+    row.BackgroundTransparency = 1
     row.BorderSizePixel = 0
     row.ClipsDescendants = true
     row.LayoutOrder = order
-    rndCorner(row, 12)
 
-    local rowStr = Instance.new("UIStroke", row)
-    rowStr.Thickness = 1
-    rowStr.Color = activeTheme.Stroke
-    rowStr.Transparency = 0.55
+    local sep = Instance.new("Frame", row)
+    sep.Size = UDim2.new(1, -16, 0, 1)
+    sep.Position = UDim2.new(0, 16, 1, -1)
+    sep.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    sep.BackgroundTransparency = 0.90
+    sep.BorderSizePixel = 0
 
     local topRow = Instance.new("Frame", row)
-    topRow.Size = UDim2.new(1, 0, 0, 52)
+    topRow.Size = UDim2.new(1, 0, 0, 54)
     topRow.BackgroundTransparency = 1
 
     local tit = Instance.new("TextLabel", topRow)
-    tit.Size = UDim2.new(1, -140, 0, 18)
-    tit.Position = UDim2.new(0, 12, 0, 6)
+    tit.Size = UDim2.new(1, -145, 0, 18)
+    tit.Position = UDim2.new(0, 16, 0, 9)
     tit.BackgroundTransparency = 1
     tit.Font = Enum.Font.GothamBold
-    tit.TextSize = 12.5
+    tit.TextSize = 13
     tit.TextColor3 = Color3.fromRGB(245, 248, 255)
     tit.TextXAlignment = Enum.TextXAlignment.Left
     tit.Text = title
 
     local sub = Instance.new("TextLabel", topRow)
-    sub.Size = UDim2.new(1, -140, 0, 24)
-    sub.Position = UDim2.new(0, 12, 0, 24)
+    sub.Size = UDim2.new(1, -145, 0, 18)
+    sub.Position = UDim2.new(0, 16, 0, 27)
     sub.BackgroundTransparency = 1
     sub.Font = Enum.Font.Gotham
-    sub.TextSize = 9.5
+    sub.TextSize = 10
     sub.TextColor3 = activeTheme.SubText
     sub.TextXAlignment = Enum.TextXAlignment.Left
-    sub.TextWrapped = true
     sub.Text = desc
 
-    -- iOS Pill Button Selector
+    -- Apple Inset Selector Pill
     local box = Instance.new("TextButton", topRow)
-    box.Size = UDim2.new(0, 118, 0, 30)
-    box.Position = UDim2.new(1, -128, 0.5, -15)
-    box.BackgroundColor3 = Color3.fromRGB(24, 30, 48)
-    box.BackgroundTransparency = 0.35
+    box.Size = UDim2.new(0, 120, 0, 30)
+    box.Position = UDim2.new(1, -132, 0.5, -15)
+    box.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    box.BackgroundTransparency = 0.88
     box.BorderSizePixel = 0
     box.Text = ""
-    rndCorner(box, 8)
+    rndCorner(box, 999)
     attachTactileAnimation(box)
 
     local boxStr = Instance.new("UIStroke", box)
     boxStr.Thickness = 1
-    boxStr.Color = activeTheme.Stroke
-    boxStr.Transparency = 0.45
+    boxStr.Color = Color3.fromRGB(255, 255, 255)
+    boxStr.Transparency = 0.82
 
     local valLbl = Instance.new("TextLabel", box)
     valLbl.Size = UDim2.new(1, -22, 1, 0)
-    valLbl.Position = UDim2.new(0, 8, 0, 0)
+    valLbl.Position = UDim2.new(0, 10, 0, 0)
     valLbl.BackgroundTransparency = 1
     valLbl.Font = Enum.Font.GothamMedium
     valLbl.TextSize = 11
@@ -5069,39 +5132,38 @@ local function createDropdown(title, desc, items, defaultVal, parent, order, cal
     arr.TextColor3 = activeTheme.Accent2
     arr.Text = "v"
 
-    -- Dropdown Content Area
+    -- Dropdown Popover Area
     local dropArea = Instance.new("Frame", row)
-    dropArea.Size = UDim2.new(1, -16, 0, 145)
-    dropArea.Position = UDim2.new(0, 8, 0, 54)
-    dropArea.BackgroundColor3 = Color3.fromRGB(14, 18, 30)
-    dropArea.BackgroundTransparency = 0.25
+    dropArea.Size = UDim2.new(1, -24, 0, 145)
+    dropArea.Position = UDim2.new(0, 12, 0, 56)
+    dropArea.BackgroundColor3 = Color3.fromRGB(16, 20, 32)
+    dropArea.BackgroundTransparency = 0.20
     dropArea.BorderSizePixel = 0
-    rndCorner(dropArea, 10)
+    rndCorner(dropArea, 12)
 
     local dropAreaStr = Instance.new("UIStroke", dropArea)
     dropAreaStr.Thickness = 1
-    dropAreaStr.Color = activeTheme.Stroke
-    dropAreaStr.Transparency = 0.5
+    dropAreaStr.Color = Color3.fromRGB(255, 255, 255)
+    dropAreaStr.Transparency = 0.82
 
-    -- iOS Search Field
     local searchInp = Instance.new("TextBox", dropArea)
-    searchInp.Size = UDim2.new(1, -12, 0, 26)
+    searchInp.Size = UDim2.new(1, -12, 0, 28)
     searchInp.Position = UDim2.new(0, 6, 0, 6)
-    searchInp.BackgroundColor3 = Color3.fromRGB(24, 28, 44)
-    searchInp.BackgroundTransparency = 0.35
+    searchInp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    searchInp.BackgroundTransparency = 0.90
     searchInp.BorderSizePixel = 0
     searchInp.Font = Enum.Font.Gotham
-    searchInp.PlaceholderText = "Search..."
+    searchInp.PlaceholderText = "Search options..."
     searchInp.PlaceholderColor3 = Color3.fromRGB(150, 155, 175)
     searchInp.TextColor3 = Color3.fromRGB(255, 255, 255)
-    searchInp.TextSize = 10.5
+    searchInp.TextSize = 11
     searchInp.Text = ""
     searchInp.ClearTextOnFocus = false
-    rndCorner(searchInp, 6)
+    rndCorner(searchInp, 8)
 
     local optScrl = Instance.new("ScrollingFrame", dropArea)
-    optScrl.Size = UDim2.new(1, -8, 1, -38)
-    optScrl.Position = UDim2.new(0, 4, 0, 36)
+    optScrl.Size = UDim2.new(1, -8, 1, -40)
+    optScrl.Position = UDim2.new(0, 4, 0, 38)
     optScrl.BackgroundTransparency = 1
     optScrl.BorderSizePixel = 0
     optScrl.ScrollBarThickness = 3
@@ -5125,8 +5187,8 @@ local function createDropdown(title, desc, items, defaultVal, parent, order, cal
 
             local btn = Instance.new("TextButton", optScrl)
             btn.Size = UDim2.new(1, -4, 0, 26)
-            btn.BackgroundColor3 = isSel and activeTheme.Accent or Color3.fromRGB(24, 30, 46)
-            btn.BackgroundTransparency = isSel and 0.15 or 0.55
+            btn.BackgroundColor3 = isSel and activeTheme.Accent or Color3.fromRGB(255, 255, 255)
+            btn.BackgroundTransparency = isSel and 0.15 or 0.92
             btn.Text = "  " .. itemStr
             btn.TextColor3 = isSel and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(225, 230, 245)
             btn.Font = isSel and Enum.Font.GothamBold or Enum.Font.Gotham
@@ -5141,7 +5203,7 @@ local function createDropdown(title, desc, items, defaultVal, parent, order, cal
                 if callback then callback(item) end
                 isExpanded = false
                 arr.Text = "v"
-                doTween(row, smoothTw, {Size = UDim2.new(1, -4, 0, 52)})
+                doTween(row, smoothTw, {Size = UDim2.new(1, 0, 0, 54)})
                 State.activeOpenedDropdown = nil
             end)
         end
@@ -5167,10 +5229,10 @@ local function createDropdown(title, desc, items, defaultVal, parent, order, cal
             State.activeOpenedDropdown = toggleMenu
             arr.Text = "^"
             populateOptions()
-            doTween(row, smoothTw, {Size = UDim2.new(1, -4, 0, 208)})
+            doTween(row, smoothTw, {Size = UDim2.new(1, 0, 0, 210)})
         else
             arr.Text = "v"
-            doTween(row, smoothTw, {Size = UDim2.new(1, -4, 0, 52)})
+            doTween(row, smoothTw, {Size = UDim2.new(1, 0, 0, 54)})
             if State.activeOpenedDropdown == toggleMenu then State.activeOpenedDropdown = nil end
         end
     end
@@ -5178,18 +5240,14 @@ local function createDropdown(title, desc, items, defaultVal, parent, order, cal
     box.MouseButton1Click:Connect(toggleMenu)
 
     table.insert(State.themeSubscribers, function(th)
-        row.BackgroundColor3 = th.RowBg
-        rowStr.Color = th.Stroke
         sub.TextColor3 = th.SubText
-        boxStr.Color = th.Stroke
-        dropAreaStr.Color = th.Stroke
         arr.TextColor3 = th.Accent2
     end)
 
     return row
 end
 
--- [ iOS MULTI-SELECT DROPDOWN ]
+-- [ AUTHENTIC APPLE MULTI-SELECT PICKER ]
 local function createMultiDropdown(title, desc, items, defaultMap, parent, order, callback)
     local isExpanded = false
     local selectedMap = {}
@@ -5216,62 +5274,61 @@ local function createMultiDropdown(title, desc, items, defaultMap, parent, order
     end
 
     local row = Instance.new("Frame", parent)
-    row.Size = UDim2.new(1, -4, 0, 52)
-    row.BackgroundColor3 = activeTheme.RowBg
-    row.BackgroundTransparency = 0.40
+    row.Size = UDim2.new(1, 0, 0, 54)
+    row.BackgroundTransparency = 1
     row.BorderSizePixel = 0
     row.ClipsDescendants = true
     row.LayoutOrder = order
-    rndCorner(row, 12)
 
-    local rowStr = Instance.new("UIStroke", row)
-    rowStr.Thickness = 1
-    rowStr.Color = activeTheme.Stroke
-    rowStr.Transparency = 0.55
+    local sep = Instance.new("Frame", row)
+    sep.Size = UDim2.new(1, -16, 0, 1)
+    sep.Position = UDim2.new(0, 16, 1, -1)
+    sep.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    sep.BackgroundTransparency = 0.90
+    sep.BorderSizePixel = 0
 
     local topRow = Instance.new("Frame", row)
-    topRow.Size = UDim2.new(1, 0, 0, 52)
+    topRow.Size = UDim2.new(1, 0, 0, 54)
     topRow.BackgroundTransparency = 1
 
     local tit = Instance.new("TextLabel", topRow)
-    tit.Size = UDim2.new(1, -140, 0, 18)
-    tit.Position = UDim2.new(0, 12, 0, 6)
+    tit.Size = UDim2.new(1, -145, 0, 18)
+    tit.Position = UDim2.new(0, 16, 0, 9)
     tit.BackgroundTransparency = 1
     tit.Font = Enum.Font.GothamBold
-    tit.TextSize = 12.5
+    tit.TextSize = 13
     tit.TextColor3 = Color3.fromRGB(245, 248, 255)
     tit.TextXAlignment = Enum.TextXAlignment.Left
     tit.Text = title
 
     local sub = Instance.new("TextLabel", topRow)
-    sub.Size = UDim2.new(1, -140, 0, 24)
-    sub.Position = UDim2.new(0, 12, 0, 24)
+    sub.Size = UDim2.new(1, -145, 0, 18)
+    sub.Position = UDim2.new(0, 16, 0, 27)
     sub.BackgroundTransparency = 1
     sub.Font = Enum.Font.Gotham
-    sub.TextSize = 9.5
+    sub.TextSize = 10
     sub.TextColor3 = activeTheme.SubText
     sub.TextXAlignment = Enum.TextXAlignment.Left
-    sub.TextWrapped = true
     sub.Text = desc
 
     local box = Instance.new("TextButton", topRow)
-    box.Size = UDim2.new(0, 118, 0, 30)
-    box.Position = UDim2.new(1, -128, 0.5, -15)
-    box.BackgroundColor3 = Color3.fromRGB(24, 30, 48)
-    box.BackgroundTransparency = 0.35
+    box.Size = UDim2.new(0, 120, 0, 30)
+    box.Position = UDim2.new(1, -132, 0.5, -15)
+    box.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    box.BackgroundTransparency = 0.88
     box.BorderSizePixel = 0
     box.Text = ""
-    rndCorner(box, 8)
+    rndCorner(box, 999)
     attachTactileAnimation(box)
 
     local boxStr = Instance.new("UIStroke", box)
     boxStr.Thickness = 1
-    boxStr.Color = activeTheme.Stroke
-    boxStr.Transparency = 0.45
+    boxStr.Color = Color3.fromRGB(255, 255, 255)
+    boxStr.Transparency = 0.82
 
     local valLbl = Instance.new("TextLabel", box)
     valLbl.Size = UDim2.new(1, -22, 1, 0)
-    valLbl.Position = UDim2.new(0, 8, 0, 0)
+    valLbl.Position = UDim2.new(0, 10, 0, 0)
     valLbl.BackgroundTransparency = 1
     valLbl.Font = Enum.Font.GothamMedium
     valLbl.TextSize = 11
@@ -5311,36 +5368,36 @@ local function createMultiDropdown(title, desc, items, defaultMap, parent, order
     arr.Text = "v"
 
     local dropArea = Instance.new("Frame", row)
-    dropArea.Size = UDim2.new(1, -16, 0, 145)
-    dropArea.Position = UDim2.new(0, 8, 0, 54)
-    dropArea.BackgroundColor3 = Color3.fromRGB(14, 18, 30)
-    dropArea.BackgroundTransparency = 0.25
+    dropArea.Size = UDim2.new(1, -24, 0, 145)
+    dropArea.Position = UDim2.new(0, 12, 0, 56)
+    dropArea.BackgroundColor3 = Color3.fromRGB(16, 20, 32)
+    dropArea.BackgroundTransparency = 0.20
     dropArea.BorderSizePixel = 0
-    rndCorner(dropArea, 10)
+    rndCorner(dropArea, 12)
 
     local dropAreaStr = Instance.new("UIStroke", dropArea)
     dropAreaStr.Thickness = 1
-    dropAreaStr.Color = activeTheme.Stroke
-    dropAreaStr.Transparency = 0.5
+    dropAreaStr.Color = Color3.fromRGB(255, 255, 255)
+    dropAreaStr.Transparency = 0.82
 
     local searchInp = Instance.new("TextBox", dropArea)
-    searchInp.Size = UDim2.new(1, -12, 0, 26)
+    searchInp.Size = UDim2.new(1, -12, 0, 28)
     searchInp.Position = UDim2.new(0, 6, 0, 6)
-    searchInp.BackgroundColor3 = Color3.fromRGB(24, 28, 44)
-    searchInp.BackgroundTransparency = 0.35
+    searchInp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    searchInp.BackgroundTransparency = 0.90
     searchInp.BorderSizePixel = 0
     searchInp.Font = Enum.Font.Gotham
-    searchInp.PlaceholderText = "Search..."
+    searchInp.PlaceholderText = "Search options..."
     searchInp.PlaceholderColor3 = Color3.fromRGB(150, 155, 175)
     searchInp.TextColor3 = Color3.fromRGB(255, 255, 255)
-    searchInp.TextSize = 10.5
+    searchInp.TextSize = 11
     searchInp.Text = ""
     searchInp.ClearTextOnFocus = false
-    rndCorner(searchInp, 6)
+    rndCorner(searchInp, 8)
 
     local optScrl = Instance.new("ScrollingFrame", dropArea)
-    optScrl.Size = UDim2.new(1, -8, 1, -38)
-    optScrl.Position = UDim2.new(0, 4, 0, 36)
+    optScrl.Size = UDim2.new(1, -8, 1, -40)
+    optScrl.Position = UDim2.new(0, 4, 0, 38)
     optScrl.BackgroundTransparency = 1
     optScrl.BorderSizePixel = 0
     optScrl.ScrollBarThickness = 3
@@ -5364,9 +5421,9 @@ local function createMultiDropdown(title, desc, items, defaultMap, parent, order
 
             local btn = Instance.new("TextButton", optScrl)
             btn.Size = UDim2.new(1, -4, 0, 26)
-            btn.BackgroundColor3 = isSel and activeTheme.Accent or Color3.fromRGB(24, 30, 46)
-            btn.BackgroundTransparency = isSel and 0.15 or 0.55
-            btn.Text = (isSel and " [X]  " or " [ ]  ") .. itemStr
+            btn.BackgroundColor3 = isSel and activeTheme.Accent or Color3.fromRGB(255, 255, 255)
+            btn.BackgroundTransparency = isSel and 0.15 or 0.92
+            btn.Text = (isSel and " [✓]  " or " [  ]  ") .. itemStr
             btn.TextColor3 = isSel and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(225, 230, 245)
             btn.Font = isSel and Enum.Font.GothamBold or Enum.Font.Gotham
             btn.TextSize = 11
@@ -5428,10 +5485,10 @@ local function createMultiDropdown(title, desc, items, defaultMap, parent, order
             State.activeOpenedDropdown = toggleMenu
             arr.Text = "^"
             populateOptions()
-            doTween(row, smoothTw, {Size = UDim2.new(1, -4, 0, 208)})
+            doTween(row, smoothTw, {Size = UDim2.new(1, 0, 0, 210)})
         else
             arr.Text = "v"
-            doTween(row, smoothTw, {Size = UDim2.new(1, -4, 0, 52)})
+            doTween(row, smoothTw, {Size = UDim2.new(1, 0, 0, 54)})
             if State.activeOpenedDropdown == toggleMenu then State.activeOpenedDropdown = nil end
         end
     end
@@ -5439,11 +5496,7 @@ local function createMultiDropdown(title, desc, items, defaultMap, parent, order
     box.MouseButton1Click:Connect(toggleMenu)
 
     table.insert(State.themeSubscribers, function(th)
-        row.BackgroundColor3 = th.RowBg
-        rowStr.Color = th.Stroke
         sub.TextColor3 = th.SubText
-        boxStr.Color = th.Stroke
-        dropAreaStr.Color = th.Stroke
         arr.TextColor3 = th.Accent2
     end)
 
@@ -5453,7 +5506,7 @@ end
 -- ==============================================================================
 -- [ UI TABS & CONTROLS BINDINGS ]
 -- ==============================================================================
-local stealCategory = createCategory("Automation Steal", farmPg, 1, false)
+local stealCategory = createCategory("Automation Steal", farmPg, 1, true)
 
 createToggle("Auto Steal", "Automatically steal eggs from areas", currentSettings.AutoFarm, stealCategory, 1, function(state)
     getgenv().config.autoFarm = state
@@ -5581,14 +5634,14 @@ createToggle("Auto Upgrade Base", "Auto buy homestead base expansion", currentSe
 end)
 
 -- ==============================================================================
--- [ THEME ENGINE & UI NAVIGATION ]
+-- [ THEME ENGINE & iOS TAB BAR NAVIGATION ]
 -- ==============================================================================
 local function applyTrans(val)
     val = math.clamp(val, 0, 100)
     local a = val / 100
-    sldrUI.Txt.Text = "Transparency: " .. math.floor(val) .. "%"
+    sldrUI.Txt.Text = "Window Transparency: " .. math.floor(val) .. "%"
     sldrUI.Fil.Size = UDim2.new(a, 0, 1, 0)
-    sldrUI.Kn.Position = UDim2.new(a, -8, 0.5, -8)
+    sldrUI.Kn.Position = UDim2.new(a, -9, 0.5, -9)
 
     local function doT(inst)
         if inst:IsA("GuiObject") then
@@ -5629,139 +5682,121 @@ sldrUI.Trk.InputBegan:Connect(function(input)
     end
 end)
 
--- Sidebar Button (iOS Inset Pill Item)
-local function mkCatBtn(data, idx)
-    local btn = Instance.new("TextButton", side)
-    btn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    btn.BackgroundTransparency = 0.55
-    btn.Size = UDim2.new(1, 0, 0, 38)
-    btn.BorderSizePixel = 0
+-- Authentic Apple UITabBar Item Builder
+local function mkTabBarBtn(data, idx)
+    local btn = Instance.new("TextButton", tabBar)
+    btn.Name = data.Name .. "Tab"
+    btn.Size = UDim2.new(0.25, 0, 1, 0)
+    btn.BackgroundTransparency = 1
     btn.Text = ""
     btn.AutoButtonColor = false
     btn.LayoutOrder = idx
-    rndCorner(btn, 12)
-    attachTactileAnimation(btn)
+    btn.ZIndex = 6
 
-    local g = makeGrad(btn, 135)
-    local s = Instance.new("UIStroke", btn)
-    s.Thickness = 1
-    s.Transparency = 0.5
-
-    -- Active indicator pill
-    local ind = Instance.new("Frame", btn)
-    ind.Size = UDim2.new(0, 0, 0, 18)
-    ind.Position = UDim2.new(0, 4, 0.5, -9)
-    ind.BorderSizePixel = 0
-    rndCorner(ind, 999)
+    local icon = Instance.new("TextLabel", btn)
+    icon.Size = UDim2.new(1, 0, 0, 20)
+    icon.Position = UDim2.new(0, 0, 0, 10)
+    icon.BackgroundTransparency = 1
+    icon.Font = Enum.Font.GothamBold
+    icon.TextSize = 16
+    icon.TextColor3 = Color3.fromRGB(150, 155, 175)
+    icon.TextXAlignment = Enum.TextXAlignment.Center
+    icon.ZIndex = 6
+    icon.Text = data.Glyph or "•"
 
     local lbl = Instance.new("TextLabel", btn)
+    lbl.Size = UDim2.new(1, 0, 0, 14)
+    lbl.Position = UDim2.new(0, 0, 0, 32)
     lbl.BackgroundTransparency = 1
-    lbl.Position = UDim2.new(0, 14, 0, 10)
-    lbl.Size = UDim2.new(1, -18, 0, 18)
-    lbl.Font = Enum.Font.GothamBold
-    lbl.TextSize = 12
-    lbl.TextXAlignment = Enum.TextXAlignment.Left
+    lbl.Font = Enum.Font.GothamMedium
+    lbl.TextSize = 10
+    lbl.TextColor3 = Color3.fromRGB(150, 155, 175)
+    lbl.TextXAlignment = Enum.TextXAlignment.Center
+    lbl.ZIndex = 6
     lbl.Text = data.Name
 
-    cBtns[idx] = {Button = btn, Gradient = g, Stroke = s, Label = lbl, Indicator = ind}
+    cBtns[idx] = {Button = btn, Icon = icon, Label = lbl}
     return btn
 end
 
--- Theme Button (iOS Inset Theme Card)
+-- Theme Button (iOS Inset Appearance Selector)
 local function mkThmBtn(n)
     local td = allThemes[n]
     if not td then return end
     local btn = Instance.new("TextButton", thmScrl)
     btn.Name = n .. "Button"
-    btn.Text = n
-    btn.Font = Enum.Font.GothamSemibold
-    btn.TextSize = 12
+    btn.Text = ""
     btn.AutoButtonColor = false
     btn.BorderSizePixel = 0
-    btn.TextXAlignment = Enum.TextXAlignment.Left
+    btn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    btn.BackgroundTransparency = 0.88
     rndCorner(btn, 10)
     attachTactileAnimation(btn)
 
-    local pad = Instance.new("UIPadding", btn)
-    pad.PaddingLeft = UDim.new(0, 34)
+    local btnStr = Instance.new("UIStroke", btn)
+    btnStr.Thickness = 1
+    btnStr.Color = Color3.fromRGB(255, 255, 255)
+    btnStr.Transparency = 0.85
 
-    local tint = Instance.new("Frame", btn)
-    tint.Size = UDim2.new(1, 0, 1, 0)
-    tint.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    tint.BackgroundTransparency = 0.85
-    tint.BorderSizePixel = 0
-    rndCorner(tint, 10)
-
-    -- Color Accent Dot
+    -- Color Preview Dot
     local d = Instance.new("Frame", btn)
-    d.Size = UDim2.new(0, 12, 0, 12)
-    d.Position = UDim2.new(0, -22, 0.5, -6)
+    d.Size = UDim2.new(0, 14, 0, 14)
+    d.Position = UDim2.new(0, 10, 0.5, -7)
     d.BackgroundColor3 = td.Accent
     d.BorderSizePixel = 0
     rndCorner(d, 999)
 
-    local ds = Instance.new("UIStroke", d)
-    ds.Color = Color3.fromRGB(255, 255, 255)
-    ds.Thickness = 1.2
-    ds.Transparency = 0.3
+    local txt = Instance.new("TextLabel", btn)
+    txt.Position = UDim2.new(0, 32, 0, 0)
+    txt.Size = UDim2.new(1, -36, 1, 0)
+    txt.BackgroundTransparency = 1
+    txt.Font = Enum.Font.GothamMedium
+    txt.TextSize = 11.5
+    txt.TextColor3 = Color3.fromRGB(255, 255, 255)
+    txt.TextXAlignment = Enum.TextXAlignment.Left
+    txt.Text = td.Name or n
 
-    local g = makeGrad(btn, 135)
-    local s = Instance.new("UIStroke", btn)
-    s.Thickness = 1
-    s.Transparency = 0.5
-
-    tBtns[n] = {Button = btn, Gradient = g, Stroke = s, Padding = pad, DotStroke = ds, Tint = tint}
+    tBtns[n] = {Button = btn, Stroke = btnStr, Dot = d, Label = txt}
     return btn
 end
 
-local function setCatVis(idx, hov)
-    local data = cBtns[idx]
-    if not data or not activeTheme then return end
-    if State.curCat == idx then
-        data.Gradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, activeTheme.Accent), ColorSequenceKeypoint.new(1, activeTheme.Accent2)}
-        data.Stroke.Color = activeTheme.Accent2
-        data.Stroke.Transparency = 0.25
-        data.Button.BackgroundTransparency = 0.1
-        data.Label.TextColor3 = Color3.fromRGB(255, 255, 255)
-        data.Indicator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        doTween(data.Indicator, fastTw, {Size = UDim2.new(0, 3, 0, 18)})
-        doTween(data.Label, fastTw, {Position = UDim2.new(0, 16, 0, 10)})
-    else
-        data.Gradient.Color = hov and activeTheme.ButtonHover or activeTheme.Button
-        data.Stroke.Color = activeTheme.Stroke
-        data.Stroke.Transparency = 0.5
-        data.Button.BackgroundTransparency = 0.45
-        data.Label.TextColor3 = activeTheme.Text
-        doTween(data.Indicator, fastTw, {Size = UDim2.new(0, 0, 0, 18)})
-        doTween(data.Label, fastTw, {Position = UDim2.new(0, 14, 0, 10)})
+local function setTabVis(idx)
+    for i, data in ipairs(cBtns) do
+        if data then
+            local isSel = (i == idx)
+            local targetColor = isSel and activeTheme.Accent or Color3.fromRGB(150, 155, 175)
+            data.Icon.TextColor3 = targetColor
+            data.Label.TextColor3 = targetColor
+            data.Label.Font = isSel and Enum.Font.GothamBold or Enum.Font.GothamMedium
+            if isSel then
+                doTween(data.Icon, fastTw, {Position = UDim2.new(0, 0, 0, 8)})
+                task.delay(0.12, function()
+                    doTween(data.Icon, iosSpring, {Position = UDim2.new(0, 0, 0, 10)})
+                end)
+            else
+                data.Icon.Position = UDim2.new(0, 0, 0, 10)
+            end
+        end
     end
 end
 
-local function setThmVis(sName, bName, hov)
+local function setThmVis(sName, bName)
     local thm = allThemes[bName]
     local d = tBtns[bName]
     if not d or not thm then return end
     local isSel = (sName == bName)
-    d.Button.TextColor3 = Color3.new(1, 1, 1)
-    d.Tint.BackgroundTransparency = (isSel or hov) and 0.35 or 0.80
-    d.Gradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, thm.Accent), ColorSequenceKeypoint.new(1, thm.Accent2)}
-    d.Stroke.Color = isSel and Color3.fromRGB(255, 255, 255) or thm.Accent
-    d.Stroke.Transparency = isSel and 0.1 or 0.45
-    d.DotStroke.Color = isSel and Color3.fromRGB(255, 255, 255) or thm.Accent
-    d.Tint.BackgroundColor3 = thm.Main.Keypoints[#thm.Main.Keypoints].Value
+    d.Stroke.Color = isSel and activeTheme.Accent or Color3.fromRGB(255, 255, 255)
+    d.Stroke.Transparency = isSel and 0.2 or 0.85
+    d.Stroke.Thickness = isSel and 1.5 or 1
+    d.Button.BackgroundTransparency = isSel and 0.75 or 0.90
 end
 
 local function swapCat(idx)
     State.curCat = idx
     for i, d in ipairs(cList) do 
         if d.Page then d.Page.Visible = (i == idx) end
-        setCatVis(i, false) 
     end
-    pageLbl.Text = cList[idx].Title
-    task.wait()
-    local tw = pageLbl.TextBounds.X
-    pgLine.Size = UDim2.new(0, 0, 0, 3)
-    doTween(pgLine, TweenInfo.new(0.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = UDim2.new(0, tw, 0, 3)})
+    setTabVis(idx)
 
     if cList[idx].Name == "Steal Panel" and renderStealPanel then
         renderStealPanel()
@@ -5779,56 +5814,39 @@ local function loadTheme(n)
     State.themeName = n
     activeTheme = t
     
-    topTxt.TextColor3 = Color3.new(1, 1, 1)
-    pageLbl.TextColor3 = Color3.new(1, 1, 1)
-    prevTxt.TextColor3 = Color3.new(1, 1, 1)
-    sldrUI.Txt.TextColor3 = Color3.new(1, 1, 1)
+    topTxt.TextColor3 = Color3.fromRGB(255, 255, 255)
+    prevTxt.TextColor3 = Color3.fromRGB(245, 248, 255)
     badgeStroke.Color = t.Accent
     badgeTxt.TextColor3 = t.Accent2
     frmGrad.Color = t.Main
     topBarGrad.Color = t.Topbar
     fixBarGrad.Color = t.Topbar
-    sideGrad.Color = t.Main
-    cntGrad.Color = t.Main
-    frmStr.Color = t.GlassRim or t.Stroke
-    sideStr.Color = t.Stroke
-    cntStr.Color = t.Stroke
+    tabBarGrad.Color = t.TabBar or t.Topbar
+    fixTabGrad.Color = t.TabBar or t.Topbar
     tglStr.Color = t.Accent
-    pgLine.BackgroundColor3 = t.Accent
-    innerGrad.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, t.Accent2), ColorSequenceKeypoint.new(1, t.Accent)}
-    sldrUI.Grad.Color = t.Topbar
-    sldrUI.Str.Color = t.Stroke
     sldrUI.Fil.BackgroundColor3 = t.Accent
-    sldrUI.Kn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    prevGrad.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, t.Accent), ColorSequenceKeypoint.new(1, t.Accent2)}
-    prevStr.Color = t.Accent2
-    
     if spSortStr then spSortStr.Color = t.Stroke end
-    prevTxt.Text = "Current Theme: " .. (t.Name or n)
+    prevTxt.Text = "Current Palette: " .. (t.Name or n)
 
-    for i = 1, #cList do setCatVis(i, false) end
-    for bName in pairs(tBtns) do setThmVis(n, bName, false) end
+    setTabVis(State.curCat or 1)
+    for bName in pairs(tBtns) do setThmVis(n, bName) end
     for _, subFn in ipairs(State.themeSubscribers) do pcall(subFn, t) end
 end
 
-for i, d in ipairs(cList) do mkCatBtn(d, i) end
+for i, d in ipairs(cList) do mkTabBarBtn(d, i) end
 for n in pairs(allThemes) do mkThmBtn(n) end
 
 for i, d in ipairs(cBtns) do
-    d.Button.MouseEnter:Connect(function() setCatVis(i, true) end)
-    d.Button.MouseLeave:Connect(function() setCatVis(i, false) end)
     d.Button.MouseButton1Click:Connect(function() swapCat(i) end)
 end
 
 for n, d in pairs(tBtns) do
-    d.Button.MouseEnter:Connect(function() setThmVis(State.themeName, n, true); doTween(d.Padding, fastTw, {PaddingLeft = UDim.new(0, 38)}) end)
-    d.Button.MouseLeave:Connect(function() setThmVis(State.themeName, n, false); doTween(d.Padding, fastTw, {PaddingLeft = UDim.new(0, 34)}) end)
     d.Button.MouseButton1Click:Connect(function()
         loadTheme(n)
         currentSettings.Theme = n
         saveStuff()
-        local bSz = UDim2.new(0, 500, 0, 335)
-        doTween(frm, TweenInfo.new(0.16, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, bSz.X.Offset + 10, 0, bSz.Y.Offset + 8)})
+        local bSz = UDim2.new(0, 465, 0, 490)
+        doTween(frm, TweenInfo.new(0.16, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, bSz.X.Offset + 8, 0, bSz.Y.Offset + 8)})
         task.delay(0.16, function() doTween(frm, TweenInfo.new(0.18, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = bSz}) end)
     end)
 end
@@ -5846,6 +5864,8 @@ local function closeUi()
     outTw.Completed:Connect(function() if not State.isOpn then frm.Visible = false end end)
     State.isOpn = false
 end
+
+closeBtn.MouseButton1Click:Connect(closeUi)
 
 tglBtn.MouseButton1Click:Connect(function()
     local bSz = UDim2.new(0, 52, 0, 52)
